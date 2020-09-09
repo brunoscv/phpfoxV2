@@ -1,0 +1,97 @@
+
+running step: requirement
+running step: requirement
+running step: requirement
+running step: requirement
+running step: requirement
+running step: requirement
+running step: requirement
+running step: requirement
+running step: requirement
+running step: requirement
+running step: requirement
+running step: requirement
+running step: requirement
+running step: requirement
+running step: requirement
+running step: requirement
+running step: requirement
+running step: requirement
+running step: requirement
+running step: requirement
+running step: requirement
+running step: requirement
+running step: requirement
+running step: requirement
+running step: requirement
+running step: requirement
+running step: requirement
+running step: requirement
+running step: requirement
+running step: requirement
+running step: requirement
+running step: requirement
+running step: requirement
+running step: requirement
+running step: requirement
+Error: Call to undefined function mysql_connect() in D:\Programming\PHP\wamp64\www\phpfoxv3\PF.Base\include\library\phpfox\database\driver\mysql.class.php:772
+Stack trace:
+#0 D:\Programming\PHP\wamp64\www\phpfoxv3\PF.Base\include\library\phpfox\database\driver\mysql.class.php(85): Phpfox_Database_Driver_Mysql->_connect('localhost', '', '', NULL, false)
+#1 D:\Programming\PHP\wamp64\www\phpfoxv3\PF.Base\include\library\phpfox\database\database.class.php(80): Phpfox_Database_Driver_Mysql->connect('localhost', '', '', '', NULL)
+#2 D:\Programming\PHP\wamp64\www\phpfoxv3\PF.Base\include\library\phpfox\database\database.class.php(104): Phpfox_Database->__construct()
+#3 D:\Programming\PHP\wamp64\www\phpfoxv3\PF.Base\start.php(330): Phpfox_Database::instance()
+#4 D:\Programming\PHP\wamp64\www\phpfoxv3\PF.Base\include\library\phpfox\phpfox\phpfox.class.php(173): db()
+#5 D:\Programming\PHP\wamp64\www\phpfoxv3\PF.Base\install\include\installer.class.php(2680): Phpfox::getCurrentVersion()
+#6 D:\Programming\PHP\wamp64\www\phpfoxv3\PF.Base\install\include\installer.class.php(215): Phpfox_Installer->_getCurrentVersion()
+#7 D:\Programming\PHP\wamp64\www\phpfoxv3\PF.Base\include\init.inc.php(245): Phpfox_Installer->run()
+#8 D:\Programming\PHP\wamp64\www\phpfoxv3\PF.Src\Core\Engine.php(81): require('D:\\Programming\\...')
+#9 D:\Programming\PHP\wamp64\www\phpfoxv3\PF.Base\start.php(36): Core\Engine->initLoadClass('D:\\Programming\\...')
+#10 D:\Programming\PHP\wamp64\www\phpfoxv3\index.php(5): require('D:\\Programming\\...')
+#11 {main}
+Stack trace:
+#0 (unknown file)(0): Phpfox_Installer->exceptionHandler(Error)
+#1 {main}
+
+Error: Call to undefined function mysql_connect() in D:\Programming\PHP\wamp64\www\phpfoxv3\PF.Base\include\library\phpfox\database\driver\mysql.class.php:772
+Stack trace:
+#0 D:\Programming\PHP\wamp64\www\phpfoxv3\PF.Base\include\library\phpfox\database\driver\mysql.class.php(85): Phpfox_Database_Driver_Mysql->_connect('localhost', '', '', NULL, false)
+#1 D:\Programming\PHP\wamp64\www\phpfoxv3\PF.Base\include\library\phpfox\database\database.class.php(80): Phpfox_Database_Driver_Mysql->connect('localhost', '', '', '', NULL)
+#2 D:\Programming\PHP\wamp64\www\phpfoxv3\PF.Base\include\library\phpfox\database\database.class.php(104): Phpfox_Database->__construct()
+#3 D:\Programming\PHP\wamp64\www\phpfoxv3\PF.Base\start.php(330): Phpfox_Database::instance()
+#4 D:\Programming\PHP\wamp64\www\phpfoxv3\PF.Base\include\library\phpfox\phpfox\phpfox.class.php(173): db()
+#5 D:\Programming\PHP\wamp64\www\phpfoxv3\PF.Base\install\include\installer.class.php(2680): Phpfox::getCurrentVersion()
+#6 D:\Programming\PHP\wamp64\www\phpfoxv3\PF.Base\install\include\installer.class.php(215): Phpfox_Installer->_getCurrentVersion()
+#7 D:\Programming\PHP\wamp64\www\phpfoxv3\PF.Base\include\init.inc.php(245): Phpfox_Installer->run()
+#8 D:\Programming\PHP\wamp64\www\phpfoxv3\PF.Src\Core\Engine.php(81): require('D:\\Programming\\...')
+#9 D:\Programming\PHP\wamp64\www\phpfoxv3\PF.Base\start.php(36): Core\Engine->initLoadClass('D:\\Programming\\...')
+#10 D:\Programming\PHP\wamp64\www\phpfoxv3\index.php(5): require('D:\\Programming\\...')
+#11 {main}
+Stack trace:
+#0 (unknown file)(0): Phpfox_Installer->exceptionHandler(Error)
+#1 {main}
+
+Error: Call to undefined function mysql_connect() in D:\Programming\PHP\wamp64\www\phpfoxv3\PF.Base\include\library\phpfox\database\driver\mysql.class.php:772
+Stack trace:
+#0 D:\Programming\PHP\wamp64\www\phpfoxv3\PF.Base\include\library\phpfox\database\driver\mysql.class.php(85): Phpfox_Database_Driver_Mysql->_connect('localhost', '', '', NULL, false)
+#1 D:\Programming\PHP\wamp64\www\phpfoxv3\PF.Base\include\library\phpfox\database\database.class.php(80): Phpfox_Database_Driver_Mysql->connect('localhost', '', '', '', NULL)
+#2 D:\Programming\PHP\wamp64\www\phpfoxv3\PF.Base\include\library\phpfox\database\database.class.php(104): Phpfox_Database->__construct()
+#3 D:\Programming\PHP\wamp64\www\phpfoxv3\PF.Base\start.php(330): Phpfox_Database::instance()
+#4 D:\Programming\PHP\wamp64\www\phpfoxv3\PF.Base\include\library\phpfox\phpfox\phpfox.class.php(173): db()
+#5 D:\Programming\PHP\wamp64\www\phpfoxv3\PF.Base\install\include\installer.class.php(2680): Phpfox::getCurrentVersion()
+#6 D:\Programming\PHP\wamp64\www\phpfoxv3\PF.Base\install\include\installer.class.php(215): Phpfox_Installer->_getCurrentVersion()
+#7 D:\Programming\PHP\wamp64\www\phpfoxv3\PF.Base\include\init.inc.php(245): Phpfox_Installer->run()
+#8 D:\Programming\PHP\wamp64\www\phpfoxv3\PF.Src\Core\Engine.php(81): require('D:\\Programming\\...')
+#9 D:\Programming\PHP\wamp64\www\phpfoxv3\PF.Base\start.php(36): Core\Engine->initLoadClass('D:\\Programming\\...')
+#10 D:\Programming\PHP\wamp64\www\phpfoxv3\index.php(5): require('D:\\Programming\\...')
+#11 {main}
+Stack trace:
+#0 (unknown file)(0): Phpfox_Installer->exceptionHandler(Error)
+#1 {main}
+
+running step: requirement
+running step: requirement
+running step: requirement
+running step: requirement
+running step: requirement
+running step: requirement
+running step: requirement
