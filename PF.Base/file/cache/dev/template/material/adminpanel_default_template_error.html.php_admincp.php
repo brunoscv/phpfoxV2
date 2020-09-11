@@ -1,5 +1,5 @@
 <?php defined('PHPFOX') or exit('NO DICE!'); ?>
-<?php /* Cached: September 11, 2020, 6:11 pm */ ?>
+<?php /* Cached: September 11, 2020, 6:21 pm */ ?>
 <?php if (! empty ( $this->_aVars['sPublicMessage'] )): ?>
 <div class="public_message <?php if ($this->_aVars['sPublicMessageType'] != 'success'): ?>public_message_<?php echo $this->_aVars['sPublicMessageType'];  endif; ?>" id="public_message" data-auto-close="<?php echo $this->_aVars['sPublicMessageAutoClose']; ?>">
     <span><?php echo $this->_aVars['sPublicMessage']; ?></span>

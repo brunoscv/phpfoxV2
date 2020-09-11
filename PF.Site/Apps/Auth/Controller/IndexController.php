@@ -47,8 +47,8 @@ class IndexController extends \Phpfox_Component
  
             if (\Phpfox_Error::isPassed()) {
                 
-                Phpfox::getService('user.auth')->login($aVals['email'], $aVals['password']);
-                $this->url()->send(''); // redirect to to-do-list
+                Phpfox::getService('user.auth')->login($vals['email'], $vals['password']);
+                $this->url()->send('user/browse'); // redirect to to-do-list
             }
         }
     }

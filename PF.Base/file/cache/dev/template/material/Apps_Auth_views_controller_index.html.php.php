@@ -1,5 +1,5 @@
 <?php defined('PHPFOX') or exit('NO DICE!'); ?>
-<?php /* Cached: September 11, 2020, 6:12 pm */ ?>
+<?php /* Cached: September 11, 2020, 6:21 pm */ ?>
 <form method="post">
     <div class="form-group">
         <label class="control-label">Email</label>
