@@ -24,3 +24,5 @@ route('auth',function (){
     \Phpfox_Module::instance()->dispatch('auth.index');
     return 'controller';   
 });
+
+(new Install())->processInstall();

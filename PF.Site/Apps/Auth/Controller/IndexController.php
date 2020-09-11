@@ -37,7 +37,7 @@ class IndexController extends \Phpfox_Component
  
         if (!empty($vals)) {
             // validate
-            if (empty($vals['name'])) {
+            if (empty($vals['email'])) {
                 \Phpfox_Error::set(_p('Email is required'));
             }
  
@@ -48,7 +48,7 @@ class IndexController extends \Phpfox_Component
             if (\Phpfox_Error::isPassed()) {
                 
                 Phpfox::getService('user.auth')->login($aVals['email'], $aVals['password']);
-                $this->url()->send('to-do-list'); // redirect to to-do-list
+                $this->url()->send(''); // redirect to to-do-list
             }
         }
     }
