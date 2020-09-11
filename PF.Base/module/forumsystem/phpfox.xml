@@ -1,0 +1,120 @@
+<module>
+	<data>
+		<module_id>forumsystem</module_id>
+		<product_id>forumsystem</product_id>
+		<is_core>0</is_core>
+		<is_active>1</is_active>
+		<is_menu>1</is_menu>
+		<menu><![CDATA[a:1:{s:35:"forumsystem.admin_menu_forum_system";a:1:{s:3:"url";a:2:{i:0;s:11:"forumsystem";i:1;s:8:"settings";}}}]]></menu>
+		<phrase_var_name>module_forumsystem</phrase_var_name>
+		<version>4.6</version>
+		<author>cespiritual</author>
+		<vendor>https://store.phpfox.com/techie/u/cespiritual</vendor>
+		<description>Show all your forums, threads and posts in a collapsed way</description>
+		<apps_icon>https://d2h79mkp7etn4r.cloudfront.net/icon/2016/02/9773c9be0856636ca618884f289f98b1.png</apps_icon>
+	</data>
+	<setting_groups>
+		<name module_id="forumsystem" version_id="2.1.0rc1" var_name="setting_group_forum_system">forum_system</name>
+	</setting_groups>
+	<settings>
+		<setting group="forum_system" module_id="forumsystem" is_hidden="0" type="string" var_name="icon" phrase_var_name="setting_icon" ordering="1" version_id="4.00">blue</setting>
+		<setting group="forum_system" module_id="forumsystem" is_hidden="0" type="boolean" var_name="showthreads" phrase_var_name="setting_showthreads" ordering="2" version_id="4.00">1</setting>
+		<setting group="forum_system" module_id="forumsystem" is_hidden="0" type="boolean" var_name="showposts" phrase_var_name="setting_showposts" ordering="4" version_id="4.00">1</setting>
+		<setting group="forum_system" module_id="forumsystem" is_hidden="0" type="string" var_name="threads_number" phrase_var_name="setting_threads_number" ordering="3" version_id="4.00">5</setting>
+		<setting group="forum_system" module_id="forumsystem" is_hidden="0" type="boolean" var_name="newposts" phrase_var_name="setting_newposts" ordering="6" version_id="4.00">1</setting>
+		<setting group="forum_system" module_id="forumsystem" is_hidden="0" type="string" var_name="forums_number" phrase_var_name="setting_forums_number" ordering="1" version_id="4.00">5</setting>
+		<setting group="forum_system" module_id="forumsystem" is_hidden="0" type="string" var_name="posts_number" phrase_var_name="setting_posts_number" ordering="5" version_id="4.00">5</setting>
+		<setting group="forum_system" module_id="forumsystem" is_hidden="0" type="boolean" var_name="show_categories" phrase_var_name="setting_show_categories" ordering="7" version_id="4.00">1</setting>
+		<setting group="forum_system" module_id="forumsystem" is_hidden="0" type="string" var_name="tag_color" phrase_var_name="setting_tag_color" ordering="6" version_id="4.00">red</setting>
+		<setting group="forum_system" module_id="forumsystem" is_hidden="0" type="boolean" var_name="attach" phrase_var_name="setting_attach" ordering="9" version_id="4.00">1</setting>
+		<setting group="forum_system" module_id="forumsystem" is_hidden="0" type="integer" var_name="group_number" phrase_var_name="setting_group_number" ordering="1" version_id="4.00">5</setting>
+		<setting group="forum_system" module_id="forumsystem" is_hidden="0" type="boolean" var_name="thank" phrase_var_name="setting_thank" ordering="10" version_id="4.00">1</setting>
+		<setting group="forum_system" module_id="forumsystem" is_hidden="0" type="integer" var_name="char" phrase_var_name="setting_char" ordering="8" version_id="4.00">1000</setting>
+	</settings>
+	<blocks>
+		<block type_id="0" m_connection="core.index-member" module_id="forumsystem" component="showgroup" location="2" is_active="1" ordering="4" disallow_access="" can_move="0">
+			<title>Group Forums</title>
+			<source_code />
+			<source_parsed />
+		</block>
+		<block type_id="0" m_connection="core.index-member" module_id="forumsystem" component="show" location="2" is_active="1" ordering="3" disallow_access="" can_move="0">
+			<title>General Forums</title>
+			<source_code />
+			<source_parsed />
+		</block>
+	</blocks>
+	<plugins>
+		<plugin module_id="forumsystem" product_id="forumsystem" call_name="run_start" title="Redirect after thread reply"><![CDATA[<?php
+
+if (strpos($_SERVER['REQUEST_URI'],'post_') && !strpos($_SERVER['REQUEST_URI'],'thread')){
+header("Location:".Phpfox::getParam('core.path'));
+exit;
+}
+
+$check = Phpfox::getLib('phpfox.request')->get('req5');
+$check1 = Phpfox::getLib('phpfox.request')->get('req6');
+
+if ($check && !strpos($check,'post_') && !$check1 && strpos($_SERVER['REQUEST_URI'],'thread')){
+$url = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+$url = str_replace($check, "post_".$check, $url);
+$url = 'http://'.$url;
+header("Location:".$url);
+exit;
+echo $url;
+
+}
+?>]]></plugin>
+	</plugins>
+	<components>
+		<component module_id="forumsystem" component="showgroup" m_connection="" module="forumsystem" is_controller="0" is_block="1" is_active="1" />
+		<component module_id="forumsystem" component="index" m_connection="" module="forumsystem" is_controller="0" is_block="1" is_active="1" />
+		<component module_id="forumsystem" component="show" m_connection="" module="forumsystem" is_controller="0" is_block="1" is_active="1" />
+	</components>
+	<phrases>
+		<phrase var_name="module_forumsystem" added="1565190656">Forum System</phrase>
+		<phrase var_name="setting_group_forum_system" added="1565190656"><![CDATA[<title>Forum System</title><info>Settings for the Forum System mod</info>]]></phrase>
+		<phrase var_name="setting_icon" added="1565190656"><![CDATA[<title>Icon Color</title><info>Select the color for the forum icon:blue, green, red, violet</info>]]></phrase>
+		<phrase var_name="setting_showthreads" added="1565190656"><![CDATA[<title>Show/Hide Threads</title><info>This option will allow you to show a collapsed window with the Threads.</info>]]></phrase>
+		<phrase var_name="setting_threads_number" added="1565190656"><![CDATA[<title>Number of Threads</title><info>Select the number of threads to show</info>]]></phrase>
+		<phrase var_name="setting_posts_number" added="1565190656"><![CDATA[<title>Number of Posts</title><info>Select the number of posts to show</info>]]></phrase>
+		<phrase var_name="setting_forums_number" added="1565190656"><![CDATA[<title>Number of Forums</title><info>Select the number of forums to show</info>]]></phrase>
+		<phrase var_name="forums" added="1565190656">Forums</phrase>
+		<phrase var_name="threads" added="1565190656">Threads</phrase>
+		<phrase var_name="posts" added="1565190656">Posts</phrase>
+		<phrase var_name="new_thread" added="1565190656">New Thread</phrase>
+		<phrase var_name="show_hide_thread" added="1565190656">Show/Hide Threads</phrase>
+		<phrase var_name="by" added="1565190656">by</phrase>
+		<phrase var_name="posted_on" added="1565190656">Posted on</phrase>
+		<phrase var_name="views" added="1565190656">Views</phrase>
+		<phrase var_name="reply" added="1565190656">Reply</phrase>
+		<phrase var_name="show_posts" added="1565190656">Show/Hide Posts</phrase>
+		<phrase var_name="admin_menu_forum_system" added="1565190656">Forum System</phrase>
+		<phrase var_name="setting_newposts" added="1565190656"><![CDATA[<title>Show new Posts Tag</title><info>Select this option to give notice of the new posts</info>]]></phrase>
+		<phrase var_name="setting_show_categories" added="1565190656"><![CDATA[<title>Show Category Forums</title><info>Select this option to show a combobox with the category forums</info>]]></phrase>
+		<phrase var_name="all" added="1565190656">All</phrase>
+		<phrase var_name="select" added="1565190656">Select</phrase>
+		<phrase var_name="setting_showpost" added="1565190656"><![CDATA[<title>Show/Hide Posts</title><info>This option will allow you to show a collapsed window with the Posts.</info>]]></phrase>
+		<phrase var_name="setting_showposts" added="1565190656"><![CDATA[<title>Show/Hide Posts</title><info>This option will allow you to show a collapsed window with the Posts.</info>]]></phrase>
+		<phrase var_name="mark_read" added="1565190656">Mark as Read</phrase>
+		<phrase var_name="setting_tag_color" added="1565190656"><![CDATA[<title>New Posts Tag Color</title><info>Select the color for the "new posts" tag.
+
+You can type the name of the color (ex: red, yellow, blue, darkblue...) or you can type the RGB code of the color (ex:#ffee00)</info>]]></phrase>
+		<phrase var_name="setting_char" added="1565190656"><![CDATA[<title>Number of Chars in Posts</title><info>Select the number of characters to show in posts.
+
+Select 0 to show all characters.
+</info>]]></phrase>
+		<phrase var_name="setting_attach" added="1565190656"><![CDATA[<title>Show Attach Files</title><info>This option will allow you to show the attach files on posts.</info>]]></phrase>
+		<phrase var_name="my_groups" added="1565190656">My Pages</phrase>
+		<phrase var_name="subscribed_groups" added="1565190656">Subscribed Pages</phrase>
+		<phrase var_name="thank_you" added="1565190656">Thank You!</phrase>
+		<phrase var_name="quote_reply" added="1565190656">Quote this reply</phrase>
+		<phrase var_name="setting_thank" added="1565190656"><![CDATA[<title>Show Thanks</title><info>Select this option to show the Thank button and the list of members that have thanked the post.</info>]]></phrase>
+		<phrase var_name="group_forums" added="1565190656">Pages Forums</phrase>
+		<phrase var_name="setting_group_number" added="1565190656"><![CDATA[<title>Number of Pages</title><info>Select the number of pages to show</info>]]></phrase>
+		<phrase var_name="thanks" added="1565190656"><![CDATA[The following users say <b>Thank You</b> for this useful post:]]></phrase>
+		<phrase var_name="thank_remove" added="1565190656">Remove Thanks</phrase>
+		<phrase var_name="total_members" added="1565190656">Members</phrase>
+		<phrase var_name="like" added="1565190656">Likes</phrase>
+		<phrase var_name="readmore" added="1565190656"><![CDATA[[read more]]]></phrase>
+	</phrases>
+</module>

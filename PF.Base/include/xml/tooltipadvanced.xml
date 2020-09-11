@@ -1,0 +1,20 @@
+<product>
+	<data>
+		<store_id />
+		<product_id>tooltipadvanced</product_id>
+		<is_core>0</is_core>
+		<title>Tool Tip Advanced</title>
+		<description>More settings for tool tip</description>
+		<version>4.5</version>
+		<latest_version></latest_version>
+		<last_check>0</last_check>
+		<is_active>1</is_active>
+		<url>https://store.phpfox.com/techie/u/cespiritual</url>
+		<url_version_check></url_version_check>
+		<icon>https://d2h79mkp7etn4r.cloudfront.net/icon/2016/02/852eb3cb29ba03179e08f567769a601c.jpg</icon>
+		<vendor><![CDATA[myphpfoxmods.com - See all our apps <a href="http://store.phpfox.com/apps?search=cespiritual" target=_new>HERE</a> - contact us at: contact@myphpfoxmods.com]]></vendor>
+	</data>
+	<modules>
+		<module_id>tooltipadvanced</module_id>
+	</modules>
+</product>

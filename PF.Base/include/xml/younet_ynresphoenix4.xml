@@ -1,0 +1,27 @@
+<product>
+	<data>
+		<store_id />
+		<product_id>younet_ynresphoenix4</product_id>
+		<is_core>0</is_core>
+		<title>YNC Responsive Phoenix Template</title>
+		<description>by YouNetCo</description>
+		<version>4.02p1</version>
+		<latest_version></latest_version>
+		<last_check>0</last_check>
+		<is_active>1</is_active>
+		<url>https://phpfox.younetco.com/</url>
+		<url_version_check></url_version_check>
+		<icon>https://static.younetco.com/ynicons/fox4/phoenix_template.png</icon>
+		<vendor>YouNetCo</vendor>
+	</data>
+	<installs>
+		<install>
+			<version>4.01</version>
+			<install_code><![CDATA[include (PHPFOX_DIR_MODULE . 'ynresphoenix/install/versions/v4.01.php');]]></install_code>
+			<uninstall_code></uninstall_code>
+		</install>
+	</installs>
+	<modules>
+		<module_id>ynresphoenix</module_id>
+	</modules>
+</product>

@@ -1,0 +1,15 @@
+4ede5162fb0950728c9f0dd44f13edf1 PF.Base/module/profilebadge/phpfox.xml
+c12590b7f776abdba6cb9b1c81ecc612 PF.Base/module/profilebadge/include/component/controller/admincp/settings.class.php
+2ccebe3fd185a95ed7202df073ada522 PF.Base/module/profilebadge/include/component/ajax/ajax.class.php
+ab1ee68271d1fa67f22c398571629bc6 PF.Base/module/profilebadge/include/component/block/show.class.php
+8ede4a292552d680701a45ec50a22bc9 PF.Base/module/profilebadge/include/component/block/style2.class.php
+e595ce1192c534ca259bb8fd4e27a051 PF.Base/module/profilebadge/include/component/block/style3.class.php
+72c404c55567e6cfad41171d7b628846 PF.Base/module/profilebadge/include/component/block/style1.class.php
+482bc95547d1e1f1c868082319d177b5 PF.Base/module/profilebadge/phrase.json
+787dcb2e8ecaedf0e226050405373c97 PF.Base/module/profilebadge/images/arrow.png
+a17deb1f8555913c6ea059d6e92c51f6 PF.Base/module/profilebadge/images/like.png
+51ef162d11b47deb57f3297289dd8eca PF.Base/module/profilebadge/template/default/controller/admincp/settings.html.php
+130a93020e4f3c6f236634e51ada6b61 PF.Base/module/profilebadge/template/default/block/style1.html.php
+13ea7c62f2217bc539bc7833da165b95 PF.Base/module/profilebadge/template/default/block/style3.html.php
+2c27338d79cd28525d98398ca42a9a47 PF.Base/module/profilebadge/template/default/block/show.html.php
+4c07679010cd2cb2a7f58d1c3251d8e9 PF.Base/module/profilebadge/template/default/block/style2.html.php

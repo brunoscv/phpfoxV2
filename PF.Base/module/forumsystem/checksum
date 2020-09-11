@@ -1,0 +1,17 @@
+97a35a3f491962c7cbbfb76f702ef669 PF.Base\module\forumsystem\images\background.png
+24f6e5f238d5b9e974c1dcd5e3164beb PF.Base\module\forumsystem\images\blue\icon_forum.png
+da076007a71bb4d6dd0653ef82166169 PF.Base\module\forumsystem\images\green\icon_forum.png
+e98611fed1b840b03bae57d7a6e6e307 PF.Base\module\forumsystem\images\red\icon_forum.png
+a5aac7922b4b431b3702c9983b466677 PF.Base\module\forumsystem\images\validate.jpg
+c06b1f9ab66eb05122740d4924be98ec PF.Base\module\forumsystem\images\violet\icon_forum.png
+47d8f0cea2b7da2efda35f67b2415c43 PF.Base\module\forumsystem\include\component\ajax\ajax.class.php
+d845f43df3649c036b65fc39a48b9425 PF.Base\module\forumsystem\include\component\ajax\index.html
+90952d16a858173fe6c4c19e70febcdb PF.Base\module\forumsystem\include\component\block\show.class.php
+cf11f42dd9f0eb6f8204824d16521917 PF.Base\module\forumsystem\include\component\block\showgroup.class.php
+96798b5ef7b1ab6280a8e750c8265df6 PF.Base\module\forumsystem\include\component\controller\admincp\settings.class.php
+d83e1c781c17c6a8f618653080056cbd PF.Base\module\forumsystem\install.pdf
+59bd3cb79836f608581303447e813b84 PF.Base\module\forumsystem\phpfox.xml
+857bbdb9056886edf83117ff04ae6928 PF.Base\module\forumsystem\phrase.json
+c0fd9979a47d69934f014e8e0bdc631d PF.Base\module\forumsystem\template\default\block\show.html.php
+1927fa61311980c0c39012d343f1c3cb PF.Base\module\forumsystem\template\default\block\showgroup.html.php
+51ef162d11b47deb57f3297289dd8eca PF.Base\module\forumsystem\template\default\controller\admincp\settings.html.php

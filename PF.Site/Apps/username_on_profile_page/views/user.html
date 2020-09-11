@@ -1,0 +1,27 @@
+<div class="user_on_profile_page_source">@{{name}}</div>
+
+<script type="text/javascript"> 
+	$Ready(function(){ 
+		$(".user_on_profile_page").remove();
+		if(typeof $(".profile-info").find('.profile-extra-info')[0] != 'undefined')
+		{
+			$(".profile-info").find('.profile-extra-info').append($(".user_on_profile_page_source").clone().prop({ class: "user_on_profile_page"}));
+		}
+		else
+		{
+			$(".profiles_info").append($(".user_on_profile_page_source").clone().prop({ class: "user_on_profile_page"}));
+		}
+		
+	}); 
+
+</script> 
+
+<style type="text/css">
+	.user_on_profile_page{
+		color:		{{color}};
+		font-size:	{{size}};
+		{% if shadow == 1 %}
+			text-shadow: 1px 1px 2px rgba(150, 150, 150, 1);
+		{% endif %}
+	);
+</style>

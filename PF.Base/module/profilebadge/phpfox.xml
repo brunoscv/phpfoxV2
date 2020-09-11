@@ -1,0 +1,66 @@
+<module>
+	<data>
+		<module_id>profilebadge</module_id>
+		<product_id>profilebadge</product_id>
+		<is_core>0</is_core>
+		<is_active>1</is_active>
+		<is_menu>0</is_menu>
+		<menu />
+		<phrase_var_name>module_profilebadge</phrase_var_name>
+		<version>4.6</version>
+		<author>cespiritual</author>
+		<vendor>https://store.phpfox.com/techie/u/cespiritual</vendor>
+		<description>Allow your members to copy/past their profile badge into their sites or blogs, promoting your network</description>
+		<apps_icon>https://d2h79mkp7etn4r.cloudfront.net/icon/2016/02/495af8f60f6f280cb947d76dc8a291a4.png</apps_icon>
+	</data>
+	<setting_groups>
+		<name module_id="profilebadge" version_id="3.7.1" var_name="setting_group_profile_badge">profile_badge</name>
+	</setting_groups>
+	<settings>
+		<setting group="profile_badge" module_id="profilebadge" is_hidden="0" type="boolean" var_name="showstyle3" phrase_var_name="setting_showstyle3" ordering="9" version_id="3.7.1">1</setting>
+		<setting group="profile_badge" module_id="profilebadge" is_hidden="0" type="boolean" var_name="showstyle1" phrase_var_name="setting_showstyle1" ordering="7" version_id="3.7.1">1</setting>
+		<setting group="profile_badge" module_id="profilebadge" is_hidden="0" type="boolean" var_name="showstyle2" phrase_var_name="setting_showstyle2" ordering="8" version_id="3.7.1">1</setting>
+		<setting group="profile_badge" module_id="profilebadge" is_hidden="0" type="boolean" var_name="gradient" phrase_var_name="setting_gradient" ordering="10" version_id="3.7.1">1</setting>
+		<setting group="profile_badge" module_id="profilebadge" is_hidden="0" type="string" var_name="backcolor" phrase_var_name="setting_backcolor" ordering="2" version_id="3.7.1">#333333</setting>
+		<setting group="profile_badge" module_id="profilebadge" is_hidden="0" type="boolean" var_name="sitename" phrase_var_name="setting_sitename" ordering="1" version_id="3.7.1">1</setting>
+		<setting group="profile_badge" module_id="profilebadge" is_hidden="0" type="string" var_name="fontcolor1" phrase_var_name="setting_fontcolor1" ordering="3" version_id="3.7.1">white</setting>
+		<setting group="profile_badge" module_id="profilebadge" is_hidden="0" type="string" var_name="backcolor2" phrase_var_name="setting_backcolor2" ordering="4" version_id="3.7.1">white</setting>
+		<setting group="profile_badge" module_id="profilebadge" is_hidden="0" type="string" var_name="fontcolorname" phrase_var_name="setting_fontcolorname" ordering="5" version_id="3.7.1">white</setting>
+		<setting group="profile_badge" module_id="profilebadge" is_hidden="0" type="string" var_name="fontcolorsite" phrase_var_name="setting_fontcolorsite" ordering="6" version_id="3.7.1">black</setting>
+	</settings>
+	<blocks>
+		<block type_id="0" m_connection="profile.index" module_id="profilebadge" component="show" location="3" is_active="1" ordering="9" disallow_access="" can_move="0">
+			<title>Profile Badge</title>
+			<source_code />
+			<source_parsed />
+		</block>
+	</blocks>
+	<components>
+		<component module_id="profilebadge" component="show" m_connection="" module="profilebadge" is_controller="0" is_block="1" is_active="1" />
+	</components>
+	<phrases>
+		<phrase var_name="module_profilebadge" added="1576866192">Profile Badge</phrase>
+		<phrase var_name="embedcode" added="1576866192">Embed this code into your blog</phrase>
+		<phrase var_name="visit" added="1576866192"><![CDATA[I&#039;m a member of:]]></phrase>
+		<phrase var_name="setting_group_profile_badge" added="1576866192"><![CDATA[<title>Profile Badge</title><info>Profile Badge Settings</info>]]></phrase>
+		<phrase var_name="setting_backcolor" added="1576866192"><![CDATA[<title>Badge Background Color - Style 1</title><info>Select the background color of the badge if no cover photo is selected. You can use code like this: #45eeff or the name of the color like this: white, black, blue, green...</info>]]></phrase>
+		<phrase var_name="setting_sitename" added="1576866192"><![CDATA[<title>Show Site Name?</title><info>If this option is "true" it will show the name of your website on the badge.</info>]]></phrase>
+		<phrase var_name="setting_fontcolor1" added="1576866192"><![CDATA[<title>Font Color - Style 1</title><info>Select the font color for Style 1</info>]]></phrase>
+		<phrase var_name="setting_backcolor2" added="1576866192"><![CDATA[<title>Badge Background Color - Style 2 & 3</title><info>Select the background color of the badge if no cover photo is selected. You can use code like this: #45eeff or the name of the color like this: white, black, blue, green...</info>]]></phrase>
+		<phrase var_name="setting_fontcolorname" added="1576866192"><![CDATA[<title>Font Color - Style 2 & 3 - Name</title><info>Select the font color for the the member&#039;s name</info>]]></phrase>
+		<phrase var_name="setting_fontcolorsite" added="1576866192"><![CDATA[<title>Font Color - Style 2 - website</title><info>Select the font color for the the sites name</info>]]></phrase>
+		<phrase var_name="style1" added="1576866192">Style 1</phrase>
+		<phrase var_name="style2" added="1576866192">Style 2</phrase>
+		<phrase var_name="style3" added="1576866192">Style 3</phrase>
+		<phrase var_name="setting_showstyle1" added="1576866192"><![CDATA[<title>Show Style 1?</title><info>Enable/Disable Style 1</info>]]></phrase>
+		<phrase var_name="setting_showstyle2" added="1576866192"><![CDATA[<title>Show Style 2?</title><info>Enable/Disable Style 2</info>]]></phrase>
+		<phrase var_name="setting_showstyle3" added="1576866192"><![CDATA[<title>Show Style 3?</title><info>Enable/Disable Style 3</info>]]></phrase>
+		<phrase var_name="user_setting_usebadge" added="1576866192">Can this user group copy the embed code of the badge?</phrase>
+		<phrase var_name="upgrade" added="1576866192">You need to upgrade your account to use the code.</phrase>
+		<phrase var_name="coverphoto" added="1576866192">To see the badge you must upload a cover photo and a profile image</phrase>
+		<phrase var_name="setting_gradient" added="1576866192"><![CDATA[<title>Add Gradient Overlay?</title><info>Add a gradient overlay to the cover image from transparency to black.</info>]]></phrase>
+	</phrases>
+	<user_group_settings>
+		<setting is_admin_setting="0" module_id="profilebadge" type="boolean" admin="1" user="1" guest="0" staff="1" module="profilebadge" ordering="0">usebadge</setting>
+	</user_group_settings>
+</module>

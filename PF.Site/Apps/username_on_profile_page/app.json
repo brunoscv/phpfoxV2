@@ -1,0 +1,31 @@
+{
+    "id": "username_on_profile_page",
+    "name": "Username on Profile",
+    "version": "1.1",
+    "store_id": 1627,
+    "icon": "http://apps.phpfoxer.net/module_icons_important/username_on_profile.jpg",
+    "settings": {
+        "ennableUP": {
+            "type": "input:radio",
+            "info": "Enable Username on Profile",
+            "value": 1
+        },
+        "colorUP": {
+            "type": "input:text",
+            "info": "Username color (e.g. #ffffff)",
+            "value": "#ffffff"
+        },
+        "sizeUP": {
+            "type": "input:text",
+            "info": "Username size (e.g. 14px)",
+            "value": "14px"
+        },
+        "ennableSH": {
+            "type": "input:radio",
+            "info": "Enable shadow",
+            "value": 0
+        }
+
+    },
+    "vendor": " Copyright phpFoxer (<a href=\"http://www.phpfoxer.com\" target=\"_blank\" alt=\"phpFox mobile apps and custom development\">www.phpfoxer.com</a>)"
+}        

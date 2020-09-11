@@ -1,0 +1,43 @@
+/* 
+    Created on : 19.05.2016, 15:05:38
+    Author     : Konrad Klockgether
+*/
+.rating-stars {
+  height: 1em;
+  position: relative;
+  letter-spacing: -15px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.rating-stars.rating-stars--input {
+  cursor: pointer;
+}
+.rating-stars > * {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.rating-stars .bg {
+  z-index: 1;
+  width: 100%;
+}
+.rating-stars .bg i {
+  color: lightgray;
+}
+.rating-stars .value {
+  z-index: 2;
+  max-width: 100%;
+  -webkit-transition: width 1000ms ease;
+          transition: width 1000ms ease;
+}
+.rating-stars .value i {
+  color: gold;
+}
+.rating-stars i {
+  width: 1em;
+  font-size: 1em;
+}

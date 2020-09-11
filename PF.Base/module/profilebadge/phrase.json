@@ -1,0 +1,22 @@
+{
+    "module_profilebadge": "Profile Badge",
+    "embedcode": "Embed this code into your blog",
+    "visit": "I&#039;m a member of:",
+    "setting_group_profile_badge": "<title>Profile Badge<\/title><info>Profile Badge Settings<\/info>",
+    "setting_backcolor": "<title>Badge Background Color - Style 1<\/title><info>Select the background color of the badge if no cover photo is selected. You can use code like this: #45eeff or the name of the color like this: white, black, blue, green...<\/info>",
+    "setting_sitename": "<title>Show Site Name?<\/title><info>If this option is \"true\" it will show the name of your website on the badge.<\/info>",
+    "setting_fontcolor1": "<title>Font Color - Style 1<\/title><info>Select the font color for Style 1<\/info>",
+    "setting_backcolor2": "<title>Badge Background Color - Style 2 & 3<\/title><info>Select the background color of the badge if no cover photo is selected. You can use code like this: #45eeff or the name of the color like this: white, black, blue, green...<\/info>",
+    "setting_fontcolorname": "<title>Font Color - Style 2 & 3 - Name<\/title><info>Select the font color for the the member&#039;s name<\/info>",
+    "setting_fontcolorsite": "<title>Font Color - Style 2 - website<\/title><info>Select the font color for the the sites name<\/info>",
+    "style1": "Style 1",
+    "style2": "Style 2",
+    "style3": "Style 3",
+    "setting_showstyle1": "<title>Show Style 1?<\/title><info>Enable\/Disable Style 1<\/info>",
+    "setting_showstyle2": "<title>Show Style 2?<\/title><info>Enable\/Disable Style 2<\/info>",
+    "setting_showstyle3": "<title>Show Style 3?<\/title><info>Enable\/Disable Style 3<\/info>",
+    "user_setting_usebadge": "Can this user group copy the embed code of the badge?",
+    "upgrade": "You need to upgrade your account to use the code.",
+    "coverphoto": "To see the badge you must upload a cover photo and a profile image",
+    "setting_gradient": "<title>Add Gradient Overlay?<\/title><info>Add a gradient overlay to the cover image from transparency to black.<\/info>"
+}

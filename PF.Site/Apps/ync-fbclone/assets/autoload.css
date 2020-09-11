@@ -1,0 +1,10 @@
+.theme-yncfbclone .site-logo{
+	background: #282c37;
+	margin-left: -16px;
+	padding-left: 16px !important;
+	margin-right: 16px;
+}
+.theme-yncfbclone .site-logo .site-logo-link .site-logo-icon i{
+	height: 32px !important;
+	margin-top: 0;
+}

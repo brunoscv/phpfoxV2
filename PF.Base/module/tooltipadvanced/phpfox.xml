@@ -1,0 +1,102 @@
+<module>
+	<data>
+		<module_id>tooltipadvanced</module_id>
+		<product_id>tooltipadvanced</product_id>
+		<is_core>0</is_core>
+		<is_active>1</is_active>
+		<is_menu>0</is_menu>
+		<menu />
+		<phrase_var_name>module_tooltipadvanced</phrase_var_name>
+		<version>4.5</version>
+		<author><![CDATA[myphpfoxmods.com - See all our apps <a href="http://store.phpfox.com/apps?search=cespiritual" target=_new>HERE</a> - contact us at: contact@myphpfoxmods.com]]></author>
+		<vendor>https://store.phpfox.com/techie/u/cespiritual</vendor>
+		<description>More settings for tool tip</description>
+		<apps_icon>https://d2h79mkp7etn4r.cloudfront.net/icon/2016/02/852eb3cb29ba03179e08f567769a601c.jpg</apps_icon>
+	</data>
+	<setting_groups>
+		<name module_id="tooltipadvanced" version_id="3.2.0rc1" var_name="setting_group_advanced_tooltip">advanced_tooltip</name>
+	</setting_groups>
+	<settings>
+		<setting group="advanced_tooltip" module_id="tooltipadvanced" is_hidden="0" type="integer" var_name="status_lenght" phrase_var_name="setting_status_lenght" ordering="3" version_id="3.2.0rc1">100</setting>
+		<setting group="advanced_tooltip" module_id="tooltipadvanced" is_hidden="0" type="boolean" var_name="status" phrase_var_name="setting_status" ordering="2" version_id="3.2.0rc1">1</setting>
+		<setting group="advanced_tooltip" module_id="tooltipadvanced" is_hidden="0" type="boolean" var_name="cover" phrase_var_name="setting_cover" ordering="1" version_id="3.2.0rc1">1</setting>
+	</settings>
+	<plugins>
+		<plugin module_id="tooltipadvanced" product_id="tooltipadvanced" call_name="user.component_block_tooltip_clean" title="Tool Tip Cover Image"><![CDATA[<?php
+
+if (Phpfox::getParam('tooltipadvanced.cover') && Phpfox::getUserParam('tooltipadvanced.see_advanced_tooltip')){
+
+$oUser = Phpfox::getService('user');
+$aUser = $oUser->getByUserName($this->request()->get('user_name'));
+$aYou = $aUser['user_id'];
+
+$aRow = Phpfox::getLib('phpfox.database')
+          ->select('*')
+            ->from(Phpfox::getT('user_field'), 'a')
+            ->join(Phpfox::getT('photo'), 'b', 'a.cover_photo = b.photo_id')
+            ->limit(1)
+            ->where('a.user_id = '.$aYou)
+            ->order('b.time_stamp DESC')
+            ->execute('getRow');  
+
+if ($aRow){
+
+ if ($aRow['server_id'] == 0){ 
+     $aImage_path = Phpfox::getParam('core.path');
+     $aImage_path .= 'file/pic/photo/';
+     $aImage_path .= $aRow['destination'];
+     $aImage_path = str_replace("%s","_1024",$aImage_path);
+	  }else{
+		  $get = storage()->get('pf_cdn_servers');
+          $url = $get->value->url;
+		     $aImage_path = $url;
+     $aImage_path .= 'file/pic/photo/';
+     $aImage_path .= $aRow['destination'];
+     $aImage_path = str_replace("%s","_1024",$aImage_path); 
+		  
+	  }
+
+echo '<img src="'.$aImage_path.'" width=100%>';
+}
+}
+?>]]></plugin>
+		<plugin module_id="tooltipadvanced" product_id="tooltipadvanced" call_name="user.component_block_tooltip_clean" title="Tool Tip Status"><![CDATA[<?php
+
+if (Phpfox::getParam('tooltipadvanced.status') && Phpfox::getUserParam('tooltipadvanced.see_advanced_tooltip')){
+$oUser = Phpfox::getService('user');
+$aUser = $oUser->getByUserName($this->request()->get('user_name'));
+$aYou = $aUser['user_id'];
+
+$aRow = Phpfox::getLib('phpfox.database')
+          ->select('*')
+            ->from(Phpfox::getT('user_status'), 'a')
+            ->limit(1)
+            ->where('a.user_id = '.$aYou)
+            ->order('a.time_stamp DESC')
+            ->execute('getRow');  
+
+if ($aRow){
+$aQuote_start = Phpfox::getParam('core.path');
+$aQuote_start .= "theme/frontend/default/style/default/image/misc/comment.png";
+
+if (Phpfox::getParam('tooltipadvanced.status_lenght') != 0){
+     $aChars = Phpfox::getParam('tooltipadvanced.status_lenght');
+     $aText = $aRow['content']." ";
+     $aText = substr($aText,0,$aChars);
+     $aText = substr($aText,0,strrpos($aText,' '));
+     $aText = $aText."...";
+}else{
+$aText = $aRow['content'];
+}
+
+if ($aRow){
+echo '<div style="padding:5px"><img src="'.$aQuote_start.'" style="float: left;">'.$aText.'</div>';
+}
+}
+}
+?>]]></plugin>
+	</plugins>
+	<user_group_settings>
+		<setting is_admin_setting="0" module_id="tooltipadvanced" type="boolean" admin="1" user="1" guest="1" staff="1" module="tooltipadvanced" ordering="0">see_advanced_tooltip</setting>
+	</user_group_settings>
+</module>

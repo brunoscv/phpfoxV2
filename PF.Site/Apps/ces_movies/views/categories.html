@@ -1,0 +1,14 @@
+<div class="block">
+	<div class="title">
+		Categories
+	</div>
+	<div class="content">
+		<div class="sub_section_menu">
+			<ul class="action">
+		{% for category in categories %}
+			<li><a href="{{ permalink('/admincp/ces_movies/categories/', category.id, category.value) }}">{{ _p(category.value) }}</a></li>
+		{% endfor %}
+			</ul>
+		</div>
+	</div>
+</div>

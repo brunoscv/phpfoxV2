@@ -1,0 +1,9 @@
+.social_login img[title="Google"]{
+    max-width: 100%;
+}
+.social_signup{
+    align-items: center;
+}
+.guest-login-small{
+    align-items: center;
+}

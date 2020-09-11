@@ -1,0 +1,1 @@
+<div class="alert alert-warning js_yncfbclone_permission_view_friend">{$sNotShareFriend}</div>
