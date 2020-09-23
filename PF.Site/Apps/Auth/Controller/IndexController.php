@@ -53,11 +53,11 @@ class IndexController extends \Phpfox_Component
                     // $this->url()->send($sRedirect);
                     $data["code"] =  "200";
                     $data["message"] = "Login was succesfully";
-                    return json_encode($data);
+                    echo json_encode($data); exit;
                 } else {
                     $data["code"] =  "401";
                     $data["message"] = "Unauthorized";
-                    return json_encode($data);
+                    echo json_encode($data); exit;
                 }
 
             }
