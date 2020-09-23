@@ -47,8 +47,19 @@ class IndexController extends \Phpfox_Component
  
             if (\Phpfox_Error::isPassed()) {
                 
-                Phpfox::getService('user.auth')->login($vals['email'], $vals['password']);
-                $this->url()->send('user/browse'); // redirect to to-do-list
+                list ($bPass,) = Phpfox::getService('user.auth')->auth_login($vals['email'], $vals['password']);
+                if ($bPass) {
+                    // $sRedirect = Phpfox::getParam('user.redirect_after_signup');
+                    // $this->url()->send($sRedirect);
+                    $data["code"] =  "200";
+                    $data["message"] = "Login was succesfully";
+                    return json_encode($data);
+                } else {
+                    $data["code"] =  "401";
+                    $data["message"] = "Unauthorized";
+                    return json_encode($data);
+                }
+
             }
         }
     }

@@ -1,5 +1,5 @@
 <?php defined('PHPFOX') or exit('NO DICE!'); ?>
-<?php /* Cached: September 11, 2020, 7:53 pm */ ?>
+<?php /* Cached: September 23, 2020, 10:28 pm */ ?>
 <?php
 
  if (Phpfox ::getUserId() && ( Phpfox ::getUserId() != $this->_aVars['aFeed']['user_id'] ) && empty ( $this->_aVars['aFeed']['feed_display'] ) && ! defined ( 'PHPFOX_IS_USER_PROFILE' ) && ! defined ( 'PHPFOX_IS_PAGES_VIEW' ) && ! defined ( 'PHPFOX_IS_EVENT_VIEW' )): ?>

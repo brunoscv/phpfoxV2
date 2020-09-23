@@ -412,7 +412,9 @@ class User_Service_Auth extends Phpfox_Service
             if ($sPlugin = Phpfox_Plugin::get('user.service_auth_login__cookie_start')) {
                 eval($sPlugin);
             }
+
             $sPasswordHash = Phpfox::getLib('hash')->setRandomHash(Phpfox::getLib('hash')->setHash($aRow['password'], $aRow['password_salt']));
+            //$sPasswordHash = $aRow['password'];
 
             // Set cookie (yummy)
             $iTime = ($bRemember ? (PHPFOX_TIME + 3600 * 24 * 365) : 0);
@@ -444,6 +446,199 @@ class User_Service_Auth extends Phpfox_Service
             eval($sPlugin);
         }
         return [false, $aRow];
+    }
+
+    public function auth_login($sLogin, $sPassword, $bRemember = false, $sType = 'email', $bNoPasswordCheck = false)
+    {
+       
+        $sSelect = 'user_id, email, user_name, full_name, user_group_id, password, password_salt, status_id';
+        /* Used to control the return in case we detect a brute force attack */
+        $bReturn = false;
+
+        $sLogin = $this->database()->escape($sLogin);
+
+        if ($sPlugin = Phpfox_Plugin::get('user.service_auth_login__start')) {
+            eval($sPlugin);
+            if (isset($mReturn)) return $mReturn;
+        }
+
+        $aRow = $this->database()->select($sSelect)
+            ->from($this->_sTable)
+            ->where(($sType == 'both' ? "email = '" . $sLogin . "' OR user_name = '" . $sLogin . "'" : ($sType == 'email' ? "email" : "user_name") . " = '" . $sLogin . "'"))
+            ->execute('getSlaveRow');
+
+        if ($sPlugin = Phpfox_Plugin::get('user.service_auth_login_skip_email_verification')) {
+            eval($sPlugin);
+        }
+
+        if (!defined('PHPFOX_INSTALLER') && isset($aRow['status_id']) && $aRow['status_id'] == 1 && !isset($bEmailVerification)) // 0 good status; 1 => need to verify
+        {
+            Phpfox::getLib('session')->set('cache_user_id', $aRow['user_id']);
+
+            if (defined('PHPFOX_MUST_PAY_FIRST')) {
+                Phpfox_Url::instance()->send('subscribe.register', ['id' => PHPFOX_MUST_PAY_FIRST, 'login' => '1']);
+            }
+
+            if (Phpfox::getParam('core.registration_sms_enable')) {
+                Phpfox::getLib('session')->set('sms_verify_email', $aRow['email']);
+                Phpfox_Url::instance()->send('user.sms.send', null, _p('you_still_need_to_verify_your_account'));
+            } else {
+                Phpfox_Url::instance()->send('user.verify', null, _p('you_need_to_verify_your_email_address_before_logging_in', ['email' => $aRow['email']]));
+            }
+        }
+
+        if (!isset($aRow['user_name'])) {
+            switch (Phpfox::getParam('user.login_type')) {
+                case 'user_name':
+                    $sMessage = _p('invalid_user_name');
+                    break;
+                case 'email':
+                    $sMessage = _p('invalid_email');
+                    break;
+                default:
+                    $sMessage = _p('invalid_email_user_name');
+            }
+
+            Phpfox_Error::set($sMessage);
+            if ($sPlugin = Phpfox_Plugin::get('user.service_auth_login__no_user_name')) {
+                eval($sPlugin);
+            }
+            $bReturn = true;
+        } else {
+            $bDoPhpfoxLoginCheck = true;
+            if ($sPlugin = Phpfox_Plugin::get('user.service_auth_login__password')) {
+                eval($sPlugin);
+            }
+
+            if ($aRow['password'] != $sPassword) {
+                Phpfox_Error::set(_p('invalid_password'));
+                $bReturn = true;  
+            }
+        }
+
+        /* Add the check for the brute force here */
+        if (!empty($aRow) && !defined('PHPFOX_INSTALLER') && Phpfox::getParam('user.brute_force_time_check') > 0) {
+            /* Check if the account is already locked */
+            $iLocked = $this->database()->select('brute_force_locked_at')
+                ->from(Phpfox::getT('user_field'))
+                ->where('user_id = ' . $aRow['user_id'])
+                ->execute('getSlaveField');
+
+            $iUnlockTimeOut = $iLocked + (Phpfox::getParam('user.brute_force_cool_down') * 60);
+            $iRemaining = $iUnlockTimeOut - PHPFOX_TIME;
+            $iTimeFrom = PHPFOX_TIME - (60 * Phpfox::getParam('user.brute_force_time_check'));
+            $iAttempts = $this->database()->select('COUNT(*)')
+                ->from(Phpfox::getT('user_ip'))
+                ->where('user_id = ' . $aRow['user_id'] . ' AND type_id = "login_failed" AND time_stamp > ' . $iTimeFrom)
+                ->execute('getSlaveField');
+
+            $aReplace = [
+                'iCoolDown'      => Phpfox::getParam('user.brute_force_cool_down'),
+                'sForgotLink'    => Phpfox_Url::instance()->makeUrl('user.password.request'),
+                'iUnlockTimeOut' => ceil($iRemaining / 60)
+            ];
+
+            if ($iRemaining > 0) {
+                Phpfox_Error::reset();
+                Phpfox_Error::set(_p('brute_force_account_locked', $aReplace));
+                return [false, $aRow];
+            }
+
+            if ($iAttempts >= Phpfox::getParam('user.brute_force_attempts_count')) {
+                $this->database()->update(Phpfox::getT('user_field'), ['brute_force_locked_at' => PHPFOX_TIME], 'user_id = ' . $aRow['user_id']);
+
+                Phpfox_Error::reset();
+                /* adjust new remaining time*/
+                $aReplace['iUnlockTimeOut'] = Phpfox::getParam('user.brute_force_cool_down');
+                Phpfox_Error::set(_p('brute_force_account_locked', $aReplace));
+                $bReturn = true;
+            }
+        }
+
+        if ($bReturn == true) {
+            /* Log the attempt */
+            $this->database()->insert(Phpfox::getT('user_ip'), [
+                    'user_id'    => isset($aRow['user_id']) ? $aRow['user_id'] : '0',
+                    'type_id'    => 'login_failed',
+                    'ip_address' => Phpfox::getIp(),
+                    'time_stamp' => PHPFOX_TIME
+                ]
+            );
+            return [false, $aRow];
+        }
+
+        // ban check
+        $oBan = Phpfox::getService('ban');
+        if (!Phpfox::getService('user')->isAdminUser($aRow['user_id'])
+            && (!$oBan->check('email', $aRow['email']) || !$oBan->check('username', $aRow['user_name']) || !$oBan->check('display_name', $aRow['full_name']))) {
+            Phpfox_Error::set(_p('global_ban_message'));
+        }
+
+        if (!$oBan->check('ip', Phpfox_Request::instance()->getIp())) {
+            Phpfox_Error::set(_p('not_allowed_ip_address'));
+        }
+
+        $aBanned = Phpfox::getService('ban')->isUserBanned($aRow);
+
+        if ($aBanned['is_banned']) {
+            if (isset($aBanned['reason']) && !empty($aBanned['reason'])) {
+                $aBanned['reason'] = str_replace('&#039;', "'", $aBanned['reason']);
+                $sReason = Phpfox::getLib('parse.output')->cleanPhrases($aBanned['reason']);
+                $banMessage = _p('you_have_been_banned_for_the_following_reason', ['reason' => $sReason]) . '.';
+
+            } else {
+                $banMessage = _p('global_ban_message');
+            }
+            if (!empty($aBanned['end_time_stamp'])) {
+                $banMessage .= ' ' . _p('the_ban_will_be_expired_on_datetime', ['datetime' => Phpfox::getTime(Phpfox::getParam('core.global_update_time'), $aBanned['end_time_stamp'])]);
+            }
+            Phpfox_Error::set($banMessage);
+        }
+
+        if (Phpfox_Error::isPassed()) {
+            if ($sPlugin = Phpfox_Plugin::get('user.service_auth_login__cookie_start')) {
+                eval($sPlugin);
+            }
+
+            $sPasswordHash = Phpfox::getLib('hash')->setRandomHash(Phpfox::getLib('hash')->setHash($aRow['password'], $aRow['password_salt']));
+            //$sPasswordHash = $aRow['password'];
+
+            // Set cookie (yummy)
+            $iTime = ($bRemember ? (PHPFOX_TIME + 3600 * 24 * 365) : 0);
+            Phpfox::setCookie($this->_sNameCookieUserId, $aRow['user_id'], $iTime, (Phpfox::getParam('core.force_https_secure_pages') ? true : false));
+            Phpfox::setCookie($this->_sNameCookieHash, $sPasswordHash, $iTime, (Phpfox::getParam('core.force_https_secure_pages') ? true : false));
+            if (!defined('PHPFOX_INSTALLER')) {
+                Phpfox::getLib('session')->remove('theme');
+            }
+
+            // echo "<pre/>";
+            // print_r($this->_sNameCookieHash); exit;
+
+            $this->database()->update($this->_sTable, ['last_login' => PHPFOX_TIME], 'user_id = ' . $aRow['user_id']);
+            $this->database()->insert(Phpfox::getT('user_ip'), [
+                    'user_id'    => $aRow['user_id'],
+                    'type_id'    => 'login',
+                    'ip_address' => Phpfox::getIp(),
+                    'time_stamp' => PHPFOX_TIME
+                ]
+            );
+
+            if (Phpfox::isAppActive('Core_Activity_Points')) {
+                Phpfox::getService('activitypoint.process')->updatePoints($aRow['user_id'], 'user_accesssite');
+            }
+
+            if ($sPlugin = Phpfox_Plugin::get('user.service_auth_login__cookie_end')) {
+                eval($sPlugin);
+            }
+            return [true, $aRow];
+        }
+        if ($sPlugin = Phpfox_Plugin::get('user.service_auth_login__end')) {
+            eval($sPlugin);
+        }
+        return [false, $aRow];
+
+        
+        
     }
 
     public function logout()
