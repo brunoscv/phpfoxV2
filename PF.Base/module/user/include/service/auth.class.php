@@ -605,8 +605,10 @@ class User_Service_Auth extends Phpfox_Service
 
             // Set cookie (yummy)
             $iTime = ($bRemember ? (PHPFOX_TIME + 3600 * 24 * 365) : 0);
-            Phpfox::setCookie($this->_sNameCookieUserId, $aRow['user_id'], $iTime, (Phpfox::getParam('core.force_https_secure_pages') ? true : false));
-            Phpfox::setCookie($this->_sNameCookieHash, $sPasswordHash, $iTime, (Phpfox::getParam('core.force_https_secure_pages') ? true : false));
+            // Phpfox::setCookie($this->_sNameCookieUserId, $aRow['user_id'], $iTime, (Phpfox::getParam('core.force_https_secure_pages') ? true : false));
+            // Phpfox::setCookie($this->_sNameCookieHash, $sPasswordHash, $iTime, (Phpfox::getParam('core.force_https_secure_pages') ? true : false));
+            Phpfox::setCookie($this->_sNameCookieUserId, $aRow['user_id'], $iTime,  "/; SameSite=None; ");
+            Phpfox::setCookie($this->_sNameCookieHash, $sPasswordHash, $iTime,  "/; SameSite=None; ");
             if (!defined('PHPFOX_INSTALLER')) {
                 Phpfox::getLib('session')->remove('theme');
             }
