@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_action` (
   KEY `type_id_2` (`item_type_id`,`item_id`,`user_id`),
   KEY `type_id_3` (`item_type_id`,`user_id`),
   KEY `item_id` (`item_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -65,7 +65,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_activitypoint_package` (
   `time_updated` int(10) UNSIGNED DEFAULT '0',
   PRIMARY KEY (`package_id`),
   KEY `package_id` (`package_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -88,7 +88,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_activitypoint_package_purchase` (
   KEY `purchase_id` (`purchase_id`),
   KEY `purchase_status` (`purchase_id`,`status`),
   KEY `package_id` (`package_id`,`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -105,7 +105,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_activitypoint_period_adjust_point` (
   `type` varchar(25) DEFAULT NULL,
   PRIMARY KEY (`adjust_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -123,7 +123,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_activitypoint_setting` (
   `period` mediumtext,
   `is_active` mediumtext,
   PRIMARY KEY (`setting_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_activitypoint_setting`
@@ -167,7 +167,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_activitypoint_statistics` (
   UNIQUE KEY `user_id` (`user_id`),
   UNIQUE KEY `user_id_2` (`user_id`),
   UNIQUE KEY `user_id_3` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_activitypoint_statistics`
@@ -198,7 +198,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_activitypoint_transaction` (
   PRIMARY KEY (`transaction_id`),
   KEY `module_id` (`module_id`,`user_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -215,7 +215,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_admincp_login` (
   `ip_address` varchar(15) NOT NULL,
   `cache_data` mediumtext,
   PRIMARY KEY (`login_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_admincp_login`
@@ -251,7 +251,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_admincp_privacy` (
   `user_group` varchar(255) DEFAULT NULL,
   `wildcard` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`rule_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -283,7 +283,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_announcement` (
   PRIMARY KEY (`announcement_id`),
   KEY `is_active` (`is_active`,`show_in_dashboard`),
   KEY `is_active_2` (`is_active`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -296,7 +296,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_announcement_hide` (
   `announcement_id` int(11) UNSIGNED NOT NULL,
   `user_id` int(11) UNSIGNED NOT NULL,
   PRIMARY KEY (`announcement_id`,`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -314,7 +314,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_api_gateway` (
   `setting` mediumtext,
   PRIMARY KEY (`gateway_id`),
   KEY `is_active` (`is_active`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_api_gateway`
@@ -337,7 +337,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_api_gateway_log` (
   `ip_address` varchar(15) DEFAULT NULL,
   `time_stamp` int(10) UNSIGNED NOT NULL,
   PRIMARY KEY (`log_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -360,7 +360,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_apps` (
   `type` tinyint(1) DEFAULT NULL,
   `is_active` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`apps_key`)
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_apps`
@@ -427,7 +427,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_attachment` (
   KEY `extension` (`extension`),
   KEY `user_id` (`user_id`),
   KEY `view_id` (`view_id`,`item_id`,`category_id`,`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -443,7 +443,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_attachment_type` (
   `is_image` tinyint(1) NOT NULL,
   `added` int(10) UNSIGNED NOT NULL,
   PRIMARY KEY (`extension`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_attachment_type`
@@ -476,7 +476,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_ban` (
   `user_groups_affected` varchar(255) NOT NULL,
   PRIMARY KEY (`ban_id`),
   KEY `type_id` (`type_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -496,7 +496,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_ban_data` (
   `is_expired` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`ban_data_id`),
   KEY `ban_id` (`ban_id`,`user_id`,`end_time_stamp`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -526,7 +526,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_block` (
   KEY `m_connection` (`m_connection`),
   KEY `m_connection_2` (`m_connection`,`is_active`),
   KEY `module_id` (`module_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=107 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=107 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_block`
@@ -650,7 +650,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_block_order` (
   `ordering` int(10) UNSIGNED NOT NULL DEFAULT '0',
   PRIMARY KEY (`order_id`),
   KEY `style_id` (`style_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -664,7 +664,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_block_source` (
   `source_code` mediumtext,
   `source_parsed` mediumtext,
   PRIMARY KEY (`block_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -681,7 +681,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_cache` (
   `type_id` varchar(255) DEFAULT NULL,
   `time_stamp` int(10) UNSIGNED NOT NULL,
   PRIMARY KEY (`cache_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_cache`
@@ -857,7 +857,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_comment` (
   KEY `parent_id` (`parent_id`,`view_id`),
   KEY `parent_id_2` (`parent_id`,`type_id`,`item_id`,`view_id`),
   KEY `view_id` (`view_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -877,7 +877,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_comment_emoticon` (
   KEY `code` (`code`),
   KEY `code_2` (`code`,`image`),
   KEY `code_3` (`code`,`title`,`image`)
-) ENGINE=InnoDB AUTO_INCREMENT=77 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=77 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_comment_emoticon`
@@ -981,7 +981,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_comment_extra` (
   KEY `comment_id` (`comment_id`),
   KEY `extra_type` (`comment_id`,`extra_type`),
   KEY `item_id` (`comment_id`,`item_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -994,7 +994,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_comment_hash` (
   `user_id` int(10) UNSIGNED NOT NULL,
   `item_hash` char(32) NOT NULL,
   `time_stamp` int(10) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -1010,7 +1010,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_comment_hide` (
   PRIMARY KEY (`hide_id`),
   KEY `user_id` (`user_id`),
   KEY `user_id_1` (`user_id`,`comment_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -1030,7 +1030,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_comment_previous_versions` (
   PRIMARY KEY (`version_id`),
   KEY `comment_id` (`comment_id`),
   KEY `user_id` (`user_id`,`comment_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -1050,7 +1050,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_comment_stickers` (
   PRIMARY KEY (`sticker_id`),
   KEY `set_id` (`set_id`),
   KEY `image_path` (`sticker_id`,`image_path`,`server_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_comment_stickers`
@@ -1135,7 +1135,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_comment_sticker_set` (
   `view_only` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`set_id`),
   KEY `set_id` (`set_id`,`is_active`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_comment_sticker_set`
@@ -1157,7 +1157,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_comment_text` (
   `text` mediumtext,
   `text_parsed` mediumtext,
   PRIMARY KEY (`comment_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -1176,7 +1176,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_comment_track` (
   PRIMARY KEY (`track_id`),
   KEY `item_id` (`item_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -1190,7 +1190,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_comment_user_sticker_set` (
   `set_id` int(10) UNSIGNED NOT NULL,
   `time_stamp` int(10) UNSIGNED NOT NULL DEFAULT '0',
   KEY `user_id` (`user_id`,`set_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -1211,7 +1211,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_component` (
   PRIMARY KEY (`component_id`),
   KEY `component` (`component`),
   KEY `is_active` (`is_active`)
-) ENGINE=InnoDB AUTO_INCREMENT=249 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=249 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_component`
@@ -1474,7 +1474,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_component_setting` (
   `user_value` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`user_id`,`var_name`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -1489,7 +1489,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_contact_category` (
   `title` varchar(255) NOT NULL,
   PRIMARY KEY (`category_id`),
   KEY `ordering` (`ordering`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_contact_category`
@@ -1517,7 +1517,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_core_log_data` (
   `datetime` varchar(255) NOT NULL,
   `extra` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -1536,7 +1536,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_core_log_service` (
   `is_share` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
   `edit_link` varchar(200) NOT NULL,
   PRIMARY KEY (`service_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_core_log_service`
@@ -1561,7 +1561,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_core_session_data` (
   `expired_at` int(11) UNSIGNED NOT NULL,
   PRIMARY KEY (`session_id`),
   KEY `expired_at` (`expired_at`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -1578,7 +1578,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_core_session_service` (
   `is_default` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
   `edit_link` varchar(200) NOT NULL,
   PRIMARY KEY (`service_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_core_session_service`
@@ -1605,7 +1605,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_core_sqs_queue` (
   `config` text NOT NULL,
   `is_active` int(1) UNSIGNED NOT NULL DEFAULT '0',
   PRIMARY KEY (`queue_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_core_sqs_queue`
@@ -1627,7 +1627,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_core_sqs_service` (
   `service_phrase_name` varchar(200) NOT NULL,
   `edit_link` varchar(200) NOT NULL,
   PRIMARY KEY (`service_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_core_sqs_service`
@@ -1656,7 +1656,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_core_storage` (
   `config` text NOT NULL,
   PRIMARY KEY (`storage_id`),
   KEY `service_id` (`service_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -1673,7 +1673,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_core_storage_service` (
   `edit_link` varchar(200) NOT NULL,
   `sort_order` int(11) UNSIGNED NOT NULL,
   PRIMARY KEY (`service_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_core_storage_service`
@@ -1700,7 +1700,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_country` (
   `phrase_var_name` varchar(255) DEFAULT NULL,
   `is_active` tinyint(1) UNSIGNED DEFAULT '1',
   PRIMARY KEY (`country_iso`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_country`
@@ -1967,7 +1967,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_country_child` (
   `phrase_var_name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`child_id`),
   KEY `country_iso` (`country_iso`)
-) ENGINE=InnoDB AUTO_INCREMENT=85 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=85 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_country_child`
@@ -2078,7 +2078,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_cron` (
   `php_code` mediumtext NOT NULL,
   PRIMARY KEY (`cron_id`),
   KEY `is_active` (`is_active`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_cron`
@@ -2106,7 +2106,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_cron_job` (
   `is_running` tinyint(1) NOT NULL DEFAULT '0',
   `last_run` int(11) UNSIGNED NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_cron_job`
@@ -2165,7 +2165,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_cron_log` (
   `cron_id` mediumint(8) UNSIGNED NOT NULL,
   `time_stamp` int(10) UNSIGNED NOT NULL,
   PRIMARY KEY (`log_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -2185,7 +2185,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_currency` (
   PRIMARY KEY (`currency_id`),
   UNIQUE KEY `currency_id` (`currency_id`),
   KEY `is_active` (`is_active`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_currency`
@@ -2222,7 +2222,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_custom_field` (
   `is_search` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`field_id`),
   KEY `field_id` (`field_id`,`user_group_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_custom_field`
@@ -2250,7 +2250,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_custom_group` (
   PRIMARY KEY (`group_id`),
   KEY `user_group_id` (`user_group_id`,`type_id`,`is_active`),
   KEY `phrase_var_name` (`phrase_var_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_custom_group`
@@ -2272,7 +2272,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_custom_option` (
   `phrase_var_name` varchar(250) NOT NULL,
   PRIMARY KEY (`option_id`),
   KEY `field_id` (`field_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -2286,7 +2286,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_custom_relation` (
   `phrase_var_name` varchar(255) NOT NULL,
   `confirmation` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`relation_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_custom_relation`
@@ -2323,7 +2323,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_custom_relation_data` (
   PRIMARY KEY (`relation_data_id`),
   KEY `user_id` (`user_id`),
   KEY `with_user_id` (`with_user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -2344,7 +2344,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_egift` (
   `ordering` int(11) UNSIGNED NOT NULL DEFAULT '0',
   PRIMARY KEY (`egift_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -2360,7 +2360,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_egift_category` (
   `time_end` int(11) UNSIGNED NOT NULL DEFAULT '0',
   `ordering` int(11) UNSIGNED NOT NULL DEFAULT '0',
   PRIMARY KEY (`category_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -2382,7 +2382,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_egift_invoice` (
   `time_stamp_paid` int(11) UNSIGNED NOT NULL DEFAULT '0',
   `status` varchar(20) NOT NULL DEFAULT 'pending',
   PRIMARY KEY (`invoice_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -2431,7 +2431,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_event` (
   KEY `view_id_2` (`view_id`,`privacy`,`item_id`,`user_id`,`start_time`),
   KEY `view_id_5` (`view_id`,`privacy`,`module_id`,`item_id`,`start_time`),
   KEY `start_time` (`start_time`,`view_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -2452,7 +2452,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_event_category` (
   PRIMARY KEY (`category_id`),
   KEY `parent_id` (`parent_id`,`is_active`),
   KEY `is_active_128` (`name_url`(128),`is_active`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_event_category`
@@ -2481,7 +2481,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_event_category_data` (
   PRIMARY KEY (`event_id`,`category_id`),
   KEY `category_id` (`category_id`),
   KEY `event_id` (`event_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -2505,7 +2505,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_event_feed` (
   PRIMARY KEY (`feed_id`),
   KEY `parent_user_id` (`parent_user_id`),
   KEY `time_update` (`time_update`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -2526,7 +2526,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_event_feed_comment` (
   `total_like` int(10) UNSIGNED NOT NULL DEFAULT '0',
   PRIMARY KEY (`feed_comment_id`),
   KEY `parent_user_id` (`parent_user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -2548,7 +2548,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_event_invite` (
   KEY `event_id` (`event_id`),
   KEY `event_id_2` (`event_id`,`invited_user_id`),
   KEY `invited_user_id` (`invited_user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -2562,7 +2562,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_event_text` (
   `description` mediumtext,
   `description_parsed` mediumtext,
   PRIMARY KEY (`event_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -2595,7 +2595,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_feed` (
   KEY `time_update` (`time_update`),
   KEY `user_id` (`user_id`,`feed_reference`,`time_stamp`),
   KEY `parent_module_id_parent_feed_id` (`parent_module_id`,`parent_feed_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_feed`
@@ -2627,7 +2627,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_feed_comment` (
   PRIMARY KEY (`feed_comment_id`),
   KEY `user_id` (`user_id`),
   KEY `parent_user_id` (`parent_user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -2645,7 +2645,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_feed_hide` (
   KEY `user_id` (`user_id`),
   KEY `item_id` (`item_id`),
   KEY `item_id_2` (`item_id`,`type_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -2668,7 +2668,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_feed_share` (
   `icon` varchar(30) DEFAULT NULL,
   `ordering` int(10) UNSIGNED NOT NULL DEFAULT '0',
   PRIMARY KEY (`share_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_feed_share`
@@ -2691,7 +2691,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_feed_sponsor` (
   `time_stamp_added` int(11) UNSIGNED NOT NULL,
   PRIMARY KEY (`sponsor_id`),
   KEY `feed_id` (`feed_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -2708,7 +2708,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_feed_tag_data` (
   KEY `user_id` (`user_id`),
   KEY `item_id` (`item_id`),
   KEY `item_id_2` (`item_id`,`type_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -2726,7 +2726,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_feed_tag_remove` (
   KEY `user_id` (`user_id`),
   KEY `item_id` (`item_id`),
   KEY `item_id_2` (`item_id`,`type_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -2741,7 +2741,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_forum_thank` (
   `user_id` int(10) UNSIGNED NOT NULL,
   `time_stamp` int(10) UNSIGNED NOT NULL,
   PRIMARY KEY (`thank_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -2764,7 +2764,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_friend` (
   KEY `user_id` (`user_id`),
   KEY `list_id` (`list_id`,`user_id`),
   KEY `friend_user_id` (`friend_user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -2784,7 +2784,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_friend_birthday` (
   PRIMARY KEY (`birthday_id`),
   KEY `birthday_user_sender` (`birthday_user_sender`,`birthday_user_receiver`),
   KEY `birthday_id` (`birthday_id`,`birthday_user_receiver`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -2800,7 +2800,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_friend_hide` (
   `time_stamp` int(10) UNSIGNED NOT NULL,
   PRIMARY KEY (`hide_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -2819,7 +2819,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_friend_list` (
   KEY `user_id` (`user_id`),
   KEY `list_id` (`list_id`,`user_id`),
   KEY `user_id_2` (`user_id`,`is_profile`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -2834,7 +2834,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_friend_list_data` (
   `ordering` int(10) UNSIGNED NOT NULL DEFAULT '0',
   UNIQUE KEY `list_id` (`list_id`,`friend_user_id`),
   KEY `list_id_2` (`list_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -2859,7 +2859,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_friend_request` (
   KEY `friend_user_id` (`friend_user_id`),
   KEY `relation_data_id` (`relation_data_id`),
   KEY `user_id_2` (`user_id`,`is_seen`,`is_ignore`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -2877,7 +2877,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_invite` (
   PRIMARY KEY (`invite_id`),
   KEY `email` (`email`),
   KEY `user_id` (`user_id`,`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -2907,7 +2907,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_language` (
   KEY `title` (`title`),
   KEY `is_default` (`is_default`),
   KEY `user_select` (`user_select`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_language`
@@ -2937,7 +2937,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_language_phrase` (
   KEY `language_id` (`language_id`),
   KEY `module_id` (`module_id`,`var_name`),
   KEY `setting_list` (`language_id`,`var_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=9532 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=9532 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_language_phrase`
@@ -12519,7 +12519,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_language_rule` (
   `ordering` int(10) UNSIGNED NOT NULL DEFAULT '0',
   PRIMARY KEY (`rule_id`),
   KEY `language_id` (`language_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -12540,7 +12540,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_like` (
   KEY `type_id_2` (`type_id`,`item_id`,`user_id`),
   KEY `type_id_3` (`type_id`,`user_id`),
   KEY `item_id` (`item_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -12556,7 +12556,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_like_cache` (
   `user_id` int(10) UNSIGNED NOT NULL,
   PRIMARY KEY (`cache_id`),
   KEY `type_id` (`type_id`,`item_id`,`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -12588,7 +12588,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_link` (
   `location_name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`link_id`),
   KEY `parent_user_id` (`parent_user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -12601,7 +12601,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_link_embed` (
   `link_id` int(10) UNSIGNED NOT NULL,
   `embed_code` mediumtext,
   UNIQUE KEY `link_id` (`link_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -12628,7 +12628,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_log_session` (
   KEY `session_hash` (`session_hash`),
   KEY `last_activity` (`last_activity`),
   KEY `user_id_2` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_log_session`
@@ -12654,7 +12654,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_log_staff` (
   `time_stamp` int(10) UNSIGNED NOT NULL,
   `ip_address` varchar(15) NOT NULL,
   PRIMARY KEY (`log_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_log_staff`
@@ -12694,7 +12694,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_log_view` (
   `cache_data` mediumtext,
   `time_stamp` int(10) UNSIGNED NOT NULL,
   PRIMARY KEY (`view_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -12712,7 +12712,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_mail_thread` (
   `is_group` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`thread_id`),
   KEY `last_id` (`last_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -12728,7 +12728,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_mail_thread_custom_list` (
   PRIMARY KEY (`custom_id`),
   KEY `folder_id` (`folder_id`),
   KEY `folder_id_1` (`folder_id`,`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -12746,7 +12746,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_mail_thread_folder` (
   KEY `user_id` (`user_id`),
   KEY `name_128_user_id` (`name`(128),`user_id`),
   KEY `name_128_folder_id` (`name`(128),`folder_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -12762,7 +12762,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_mail_thread_forward` (
   PRIMARY KEY (`forward_id`),
   KEY `message_id` (`message_id`),
   KEY `copy_id` (`copy_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -12775,7 +12775,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_mail_thread_group_title` (
   `thread_id` int(10) UNSIGNED NOT NULL,
   `title` mediumtext,
   PRIMARY KEY (`thread_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -12798,7 +12798,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_mail_thread_text` (
   PRIMARY KEY (`message_id`),
   KEY `thread_id` (`thread_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -12822,7 +12822,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_mail_thread_user` (
   KEY `user_id_2` (`user_id`,`is_archive`,`is_sent_update`),
   KEY `user_id_4` (`user_id`,`is_archive`,`is_sent`),
   KEY `user_id_5` (`user_id`,`is_archive`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -12836,7 +12836,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_mail_thread_user_compare` (
   `user_id` int(10) UNSIGNED NOT NULL,
   PRIMARY KEY (`thread_id`,`user_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -12867,7 +12867,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_menu` (
   KEY `page_id` (`page_id`),
   KEY `m_connection` (`m_connection`,`is_active`),
   KEY `parent_id` (`parent_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_menu`
@@ -12935,7 +12935,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_module` (
   KEY `is_active` (`is_active`),
   KEY `is_menu` (`is_menu`),
   KEY `module_is_active` (`module_id`,`is_active`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_module`
@@ -13029,7 +13029,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_music_album` (
   KEY `view_id_3` (`view_id`,`privacy`,`total_track`,`module_id`,`item_id`),
   KEY `view_id_4` (`view_id`,`privacy`,`total_track`,`item_id`),
   KEY `view_id_5` (`view_id`,`user_id`,`item_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -13043,7 +13043,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_music_album_text` (
   `text` mediumtext,
   `text_parsed` mediumtext,
   PRIMARY KEY (`album_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -13057,7 +13057,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_music_feed` (
   `song_id` int(10) UNSIGNED NOT NULL,
   `feed_table` varchar(255) NOT NULL DEFAULT 'feed',
   PRIMARY KEY (`feed_id`,`song_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -13077,7 +13077,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_music_genre` (
   PRIMARY KEY (`genre_id`),
   KEY `user_id` (`user_id`),
   KEY `name_128` (`name`(128))
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_music_genre`
@@ -13117,7 +13117,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_music_genre_data` (
   `song_id` int(10) UNSIGNED NOT NULL,
   `genre_id` int(10) UNSIGNED NOT NULL,
   PRIMARY KEY (`song_id`,`genre_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -13145,7 +13145,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_music_playlist` (
   `total_like` int(10) UNSIGNED NOT NULL DEFAULT '0',
   PRIMARY KEY (`playlist_id`),
   KEY `playlist_id` (`playlist_id`,`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -13162,7 +13162,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_music_playlist_data` (
   `time_stamp` int(10) UNSIGNED NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `playlist_data` (`playlist_id`,`song_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -13178,7 +13178,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_music_profile` (
   PRIMARY KEY (`play_id`),
   KEY `song_id` (`song_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -13227,7 +13227,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_music_song` (
   KEY `view_id_6` (`view_id`,`privacy`,`module_id`,`item_id`),
   KEY `view_id_7` (`view_id`,`privacy`,`item_id`),
   KEY `title_128_view_privacy` (`title`(128),`view_id`,`privacy`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -13256,7 +13256,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_newsletter` (
   `job_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`newsletter_id`),
   KEY `state` (`state`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_newsletter`
@@ -13277,7 +13277,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_newsletter_text` (
   `text_html` mediumtext NOT NULL,
   `text_plain` mediumtext NOT NULL,
   PRIMARY KEY (`newsletter_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_newsletter_text`
@@ -13307,7 +13307,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_notification` (
   KEY `owner_user_id` (`owner_user_id`),
   KEY `user_id_2` (`user_id`,`is_seen`),
   KEY `type_id` (`type_id`,`item_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -13339,7 +13339,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_page` (
   KEY `page_id` (`page_id`,`is_active`),
   KEY `is_active` (`is_active`,`title_url`),
   KEY `product_id` (`product_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_page`
@@ -13394,7 +13394,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_pages` (
   KEY `type_id` (`type_id`,`time_stamp`),
   KEY `view_id_2` (`view_id`),
   KEY `title_128_view_privacy` (`title`(128),`view_id`,`privacy`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -13409,7 +13409,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_pages_admin` (
   PRIMARY KEY (`page_id`,`user_id`),
   KEY `page_id` (`page_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -13428,7 +13428,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_pages_category` (
   PRIMARY KEY (`category_id`),
   KEY `category_id` (`category_id`,`is_active`),
   KEY `type_id` (`type_id`,`is_active`)
-) ENGINE=InnoDB AUTO_INCREMENT=159 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=159 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_pages_category`
@@ -13610,7 +13610,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_pages_claim` (
   PRIMARY KEY (`claim_id`),
   KEY `page_id` (`page_id`,`user_id`),
   KEY `status_id` (`status_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -13636,7 +13636,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_pages_feed` (
   PRIMARY KEY (`feed_id`),
   KEY `parent_user_id` (`parent_user_id`),
   KEY `time_update` (`time_update`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -13657,7 +13657,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_pages_feed_comment` (
   `total_like` int(10) UNSIGNED NOT NULL DEFAULT '0',
   PRIMARY KEY (`feed_comment_id`),
   KEY `parent_user_id` (`parent_user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -13682,7 +13682,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_pages_invite` (
   KEY `listing_id_3` (`page_id`,`visited_id`),
   KEY `listing_id_4` (`page_id`,`visited_id`,`invited_user_id`),
   KEY `visited_id` (`visited_id`,`invited_user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -13699,7 +13699,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_pages_login` (
   PRIMARY KEY (`login_id`),
   KEY `login_id` (`login_id`,`page_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -13716,7 +13716,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_pages_menu` (
   `ordering` int(10) UNSIGNED NOT NULL DEFAULT '1',
   PRIMARY KEY (`menu_id`),
   KEY `page_id` (`page_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -13731,7 +13731,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_pages_perm` (
   `var_value` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`page_id`,`var_name`),
   KEY `page_id` (`page_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -13748,7 +13748,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_pages_signup` (
   PRIMARY KEY (`signup_id`),
   KEY `page_id` (`page_id`),
   KEY `page_id_2` (`page_id`,`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -13762,7 +13762,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_pages_text` (
   `text` mediumtext,
   `text_parsed` mediumtext,
   PRIMARY KEY (`page_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -13782,7 +13782,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_pages_type` (
   `ordering` int(10) UNSIGNED NOT NULL,
   PRIMARY KEY (`type_id`),
   KEY `is_active` (`is_active`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_pages_type`
@@ -13811,7 +13811,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_pages_url` (
   `page_id` int(10) UNSIGNED NOT NULL,
   PRIMARY KEY (`page_id`),
   KEY `vanity_url_128` (`vanity_url`(128))
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -13834,7 +13834,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_pages_widget` (
   `image_server_id` tinyint(3) NOT NULL DEFAULT '0',
   PRIMARY KEY (`widget_id`),
   KEY `page_id` (`page_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -13848,7 +13848,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_pages_widget_text` (
   `text` mediumtext,
   `text_parsed` mediumtext,
   PRIMARY KEY (`widget_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -13862,7 +13862,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_page_log` (
   `user_id` int(10) UNSIGNED NOT NULL,
   `updated` int(10) UNSIGNED NOT NULL,
   KEY `page_id` (`page_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -13878,7 +13878,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_page_text` (
   `keyword` mediumtext,
   `description` mediumtext,
   KEY `page_id` (`page_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_page_text`
@@ -13904,7 +13904,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_password_request` (
   PRIMARY KEY (`password_request_id`),
   KEY `request_id` (`request_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -13960,7 +13960,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_photo` (
   KEY `is_profile_photo` (`is_profile_photo`),
   KEY `user_id` (`user_id`),
   KEY `title_128_view_privacy` (`title`(128),`view_id`,`privacy`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -13996,7 +13996,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_photo_album` (
   KEY `view_id_2` (`view_id`,`group_id`,`privacy`),
   KEY `view_id_3` (`view_id`,`privacy`,`user_id`),
   KEY `view_id_4` (`view_id`,`privacy`,`total_photo`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -14010,7 +14010,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_photo_album_info` (
   `description` mediumtext,
   PRIMARY KEY (`album_id`),
   UNIQUE KEY `album_id` (`album_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -14030,7 +14030,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_photo_category` (
   `ordering` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`category_id`),
   KEY `parent_id` (`parent_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_photo_category`
@@ -14072,7 +14072,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_photo_category_data` (
   PRIMARY KEY (`photo_id`,`category_id`),
   KEY `photo_id` (`photo_id`),
   KEY `category_id` (`category_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -14088,7 +14088,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_photo_feed` (
   PRIMARY KEY (`feed_id`,`photo_id`),
   KEY `feed_id` (`feed_id`),
   KEY `photo_id` (`photo_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -14111,7 +14111,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_photo_info` (
   `tagged_friends` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`photo_id`),
   UNIQUE KEY `photo_id` (`photo_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -14137,7 +14137,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_photo_tag` (
   KEY `photo_id_2` (`photo_id`,`position_x`,`position_y`,`width`,`height`),
   KEY `photo_id_3` (`photo_id`,`tag_user_id`),
   KEY `photo_id_4` (`photo_id`,`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -14157,7 +14157,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_plugin` (
   `ordering` tinyint(3) NOT NULL DEFAULT '0',
   PRIMARY KEY (`plugin_id`),
   KEY `is_active` (`is_active`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_plugin`
@@ -14186,7 +14186,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_plugin_hook` (
   PRIMARY KEY (`hook_id`),
   KEY `product_id` (`product_id`),
   KEY `call_name` (`call_name`,`is_active`)
-) ENGINE=InnoDB AUTO_INCREMENT=803 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=803 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_plugin_hook`
@@ -15013,7 +15013,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_point_purchase` (
   `time_stamp` int(10) UNSIGNED NOT NULL,
   `total_point` int(10) UNSIGNED NOT NULL DEFAULT '0',
   PRIMARY KEY (`purchase_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -15033,7 +15033,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_poke_data` (
   KEY `to_user_id` (`to_user_id`),
   KEY `user_id` (`user_id`,`to_user_id`),
   KEY `user_id_2` (`user_id`,`to_user_id`,`status_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -15052,7 +15052,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_privacy` (
   PRIMARY KEY (`privacy_id`),
   KEY `module_id` (`module_id`,`item_id`),
   KEY `friend_list_id` (`friend_list_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -15078,7 +15078,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_product` (
   KEY `is_active` (`is_active`),
   KEY `title` (`title`),
   KEY `product_active` (`product_id`,`is_active`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_product`
@@ -15107,7 +15107,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_product_dependency` (
   `dependency_end` varchar(25) DEFAULT NULL,
   PRIMARY KEY (`dependency_id`),
   KEY `product_id` (`product_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -15124,7 +15124,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_product_install` (
   `uninstall_code` mediumtext,
   PRIMARY KEY (`install_id`),
   KEY `product_id` (`product_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_product_install`
@@ -15154,7 +15154,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_report` (
   `ordering` int(11) NOT NULL,
   PRIMARY KEY (`report_id`),
   KEY `module_id` (`module_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_report`
@@ -15183,7 +15183,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_report_data` (
   KEY `report_id` (`report_id`,`item_id`,`user_id`),
   KEY `item_id` (`item_id`,`user_id`),
   KEY `report_id_2` (`report_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -15197,7 +15197,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_rewrite` (
   `url` varchar(250) NOT NULL,
   `replacement` varchar(250) NOT NULL,
   PRIMARY KEY (`rewrite_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_rewrite`
@@ -15232,7 +15232,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_rss` (
   KEY `group_id` (`group_id`,`is_active`),
   KEY `feed_id` (`feed_id`,`is_active`),
   KEY `is_active` (`is_active`,`is_site_wide`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_rss`
@@ -15260,7 +15260,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_rss_group` (
   `ordering` int(4) UNSIGNED NOT NULL DEFAULT '0',
   PRIMARY KEY (`group_id`),
   KEY `is_active` (`is_active`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_rss_group`
@@ -15287,7 +15287,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_rss_log` (
   `time_stamp` int(10) UNSIGNED NOT NULL,
   PRIMARY KEY (`log_id`),
   KEY `feed_id` (`feed_id`,`id_hash`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -15305,7 +15305,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_rss_log_user` (
   `time_stamp` int(10) UNSIGNED NOT NULL,
   PRIMARY KEY (`log_id`),
   KEY `user_id` (`user_id`,`id_hash`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -15323,7 +15323,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_search` (
   `time_stamp` int(10) UNSIGNED NOT NULL,
   PRIMARY KEY (`search_id`),
   KEY `search_id` (`search_id`,`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -15339,7 +15339,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_seo_meta` (
   `content` mediumtext NOT NULL,
   `time_stamp` int(10) UNSIGNED NOT NULL,
   PRIMARY KEY (`meta_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -15353,7 +15353,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_seo_nofollow` (
   `url` varchar(255) DEFAULT NULL,
   `time_stamp` int(10) UNSIGNED NOT NULL,
   PRIMARY KEY (`nofollow_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -15370,7 +15370,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_session` (
   PRIMARY KEY (`session_id`),
   UNIQUE KEY `user_id` (`user_id`),
   KEY `user_id_2` (`user_id`,`last_activity`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -15398,7 +15398,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_setting` (
   KEY `module_id` (`module_id`,`is_hidden`),
   KEY `product_id` (`product_id`,`is_hidden`),
   KEY `is_hidden` (`is_hidden`)
-) ENGINE=InnoDB AUTO_INCREMENT=401 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=401 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_setting`
@@ -15796,7 +15796,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_setting_group` (
   `var_name` varchar(250) NOT NULL,
   PRIMARY KEY (`group_id`),
   KEY `var_name` (`var_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_setting_group`
@@ -15836,7 +15836,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_site_stat` (
   `ordering` mediumint(8) UNSIGNED NOT NULL DEFAULT '0',
   PRIMARY KEY (`stat_id`),
   KEY `is_active` (`is_active`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_site_stat`
@@ -15864,7 +15864,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_socialbridge_agents` (
   `user_name` varchar(75) DEFAULT NULL,
   `img_url` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`agent_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -15887,7 +15887,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_socialbridge_services` (
   `is_active` int(11) NOT NULL DEFAULT '1',
   `params` text,
   PRIMARY KEY (`service_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_socialbridge_services`
@@ -15912,7 +15912,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_socialbridge_services_setting` (
   `module_id` varchar(255) NOT NULL,
   `is_active` tinyint(1) UNSIGNED DEFAULT '1',
   PRIMARY KEY (`setting_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -15936,7 +15936,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_socialbridge_token` (
   KEY `session_id` (`session_id`),
   KEY `identity` (`identity`),
   KEY `service` (`service`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -15955,7 +15955,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_socialconnect` (
   `is_enabled` int(11) UNSIGNED NOT NULL DEFAULT '0',
   `ordering` int(11) UNSIGNED NOT NULL DEFAULT '0',
   PRIMARY KEY (`connect_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -15977,7 +15977,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_socialconnect_data` (
   `is_login` int(11) UNSIGNED NOT NULL DEFAULT '0',
   `email` text,
   PRIMARY KEY (`data_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -16005,7 +16005,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_tag` (
   KEY `item_id_2` (`item_id`,`category_id`,`user_id`),
   KEY `item_id_3` (`item_id`,`category_id`,`tag_url`),
   KEY `category_id_2` (`category_id`,`tag_text`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -16023,7 +16023,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_temp_file` (
   `path` varchar(255) DEFAULT NULL,
   `server_id` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`file_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -16048,7 +16048,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_theme` (
   KEY `is_active` (`is_active`),
   KEY `theme_id` (`theme_id`,`is_active`),
   KEY `folder` (`folder`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_theme`
@@ -16088,7 +16088,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_theme_style` (
   KEY `parent_id` (`parent_id`,`is_active`),
   KEY `is_default` (`is_default`),
   KEY `folder` (`folder`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_theme_style`
@@ -16111,7 +16111,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_timezone_setting` (
   `timezone_key` varchar(4) NOT NULL,
   `disable` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`setting_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -16132,7 +16132,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_track` (
   KEY `type_id_2` (`type_id`,`item_id`,`user_id`),
   KEY `type_id_3` (`type_id`,`user_id`),
   KEY `item_id` (`item_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -16150,7 +16150,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_upload_track` (
   `time_stamp` int(10) UNSIGNED DEFAULT NULL,
   PRIMARY KEY (`track_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -16206,7 +16206,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_user` (
   KEY `status_id_2` (`status_id`,`view_id`,`full_name`),
   KEY `page_id` (`profile_page_id`),
   KEY `user_id` (`user_id`,`status_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_user`
@@ -16245,7 +16245,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_user_activity` (
   `activity_points_gifted` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `activity_groups` int(10) UNSIGNED NOT NULL DEFAULT '0',
   UNIQUE KEY `user_id` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_user_activity`
@@ -16272,7 +16272,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_user_blocked` (
   PRIMARY KEY (`block_id`),
   KEY `user_id` (`user_id`,`block_user_id`),
   KEY `user_id_2` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -16290,7 +16290,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_user_count` (
   `event_invite` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `marketplace_invite` int(10) UNSIGNED NOT NULL DEFAULT '0',
   UNIQUE KEY `user_id` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_user_count`
@@ -16317,7 +16317,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_user_css` (
   `ordering` smallint(4) UNSIGNED NOT NULL DEFAULT '0',
   PRIMARY KEY (`css_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -16330,7 +16330,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_user_css_code` (
   `user_id` int(10) UNSIGNED NOT NULL,
   `css_code` mediumtext,
   UNIQUE KEY `user_id` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -16347,7 +16347,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_user_custom` (
   `cf_relationship_status` varchar(150) DEFAULT NULL,
   `cf_which_best_describes` varchar(150) DEFAULT NULL,
   UNIQUE KEY `user_id` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -16362,7 +16362,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_user_custom_data` (
   `total_like` int(11) UNSIGNED NOT NULL DEFAULT '0',
   `total_comment` int(11) UNSIGNED NOT NULL DEFAULT '0',
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -16377,7 +16377,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_user_custom_multiple_value` (
   `option_id` smallint(4) UNSIGNED NOT NULL,
   PRIMARY KEY (`user_id`,`field_id`,`option_id`),
   KEY `user_id` (`user_id`,`field_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -16394,7 +16394,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_user_custom_value` (
   `cf_relationship_status` smallint(4) UNSIGNED DEFAULT NULL,
   `cf_which_best_describes` varchar(150) DEFAULT NULL,
   UNIQUE KEY `user_id` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -16412,7 +16412,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_user_dashboard` (
   `ordering` smallint(4) UNSIGNED NOT NULL DEFAULT '0',
   PRIMARY KEY (`dashboard_id`),
   KEY `user_id` (`user_id`,`is_hidden`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -16430,7 +16430,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_user_delete` (
   `is_active` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`delete_id`),
   KEY `is_active` (`is_active`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -16449,7 +16449,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_user_delete_feedback` (
   `time_stamp` int(11) UNSIGNED NOT NULL,
   PRIMARY KEY (`feedback_id`),
   KEY `user_email` (`user_email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -16467,7 +16467,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_user_design_order` (
   `ordering` smallint(4) UNSIGNED NOT NULL DEFAULT '0',
   PRIMARY KEY (`design_order_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -16480,7 +16480,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_user_featured` (
   `user_id` int(10) UNSIGNED NOT NULL,
   `ordering` tinyint(2) NOT NULL DEFAULT '0',
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -16536,7 +16536,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_user_field` (
   `total_groups` int(10) UNSIGNED NOT NULL DEFAULT '0',
   UNIQUE KEY `user_id` (`user_id`),
   KEY `designer_style_id` (`designer_style_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_user_field`
@@ -16560,7 +16560,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_user_gateway` (
   `gateway_detail` mediumtext,
   PRIMARY KEY (`user_id`,`gateway_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -16580,7 +16580,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_user_group` (
   PRIMARY KEY (`user_group_id`),
   KEY `user_group_id` (`user_group_id`),
   KEY `is_special` (`is_special`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_user_group`
@@ -16608,7 +16608,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_user_group_custom` (
   `default_value` text NOT NULL,
   PRIMARY KEY (`setting_id`),
   KEY `user_group_id` (`user_group_id`,`module_id`,`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=88 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=88 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_user_group_custom`
@@ -16727,7 +16727,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_user_group_setting` (
   PRIMARY KEY (`setting_id`),
   KEY `product_id` (`product_id`),
   KEY `module_id` (`module_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=261 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=261 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_user_group_setting`
@@ -17014,7 +17014,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_user_import` (
   `processing_job_id` mediumtext,
   `import_field` mediumtext,
   PRIMARY KEY (`import_id`,`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -17032,7 +17032,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_user_inactive` (
   `total_users` int(11) UNSIGNED NOT NULL,
   `user_id` int(11) UNSIGNED NOT NULL,
   PRIMARY KEY (`job_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -17052,7 +17052,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_user_ip` (
   KEY `ip_address` (`ip_address`),
   KEY `user_id_2` (`user_id`,`ip_address`),
   KEY `user_id_3` (`user_id`,`type_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=87 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=87 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_user_ip`
@@ -17160,7 +17160,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_user_notification` (
   PRIMARY KEY (`notification_id`),
   KEY `user_id` (`user_id`,`user_notification`),
   KEY `user_id_2` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -17175,7 +17175,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_user_privacy` (
   `user_value` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`user_id`,`user_privacy`),
   KEY `user_id_2` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -17194,7 +17194,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_user_promotion` (
   `time_stamp` int(10) UNSIGNED NOT NULL,
   PRIMARY KEY (`promotion_id`),
   KEY `user_group_id` (`user_group_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -17212,7 +17212,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_user_rating` (
   PRIMARY KEY (`rate_id`),
   KEY `item_id` (`item_id`,`user_id`),
   KEY `item_id_2` (`item_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -17226,7 +17226,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_user_setting` (
   `setting_id` mediumint(8) UNSIGNED NOT NULL,
   `value_actual` text NOT NULL,
   PRIMARY KEY (`user_group_id`,`setting_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -17242,7 +17242,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_user_snoop` (
   `logging_in_as` int(11) UNSIGNED NOT NULL,
   PRIMARY KEY (`snoop_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -17267,7 +17267,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_user_space` (
   `space_total` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `space_groups` int(10) UNSIGNED NOT NULL DEFAULT '0',
   UNIQUE KEY `user_id` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_user_space`
@@ -17294,7 +17294,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_user_spam` (
   `case_sensitive` tinyint(1) NOT NULL DEFAULT '1',
   `time_stamp` int(10) UNSIGNED NOT NULL,
   PRIMARY KEY (`question_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -17316,7 +17316,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_user_status` (
   `location_name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`status_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_user_status`
@@ -17336,7 +17336,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_user_twofactor_token` (
   `email` varchar(100) NOT NULL DEFAULT '',
   `token_data` text,
   PRIMARY KEY (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -17351,7 +17351,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_user_verify` (
   `time_stamp` int(9) UNSIGNED NOT NULL,
   `email` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -17367,7 +17367,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_user_verify_error` (
   `ip_address` varchar(15) NOT NULL,
   `time_stamp` int(9) UNSIGNED NOT NULL,
   PRIMARY KEY (`error_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -17382,7 +17382,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_version` (
   `ordering` mediumint(8) UNSIGNED NOT NULL DEFAULT '0',
   PRIMARY KEY (`version_key`),
   KEY `version_id` (`version_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=77 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=77 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_version`
@@ -17478,7 +17478,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_ync_facebook_icons` (
   `keywords` varchar(255) DEFAULT NULL,
   `icon` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`icon_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Fazendo dump de dados para tabela `phpfox_ync_facebook_icons`
@@ -17515,7 +17515,7 @@ CREATE TABLE IF NOT EXISTS `phpfox_ync_facebook_shortcuts` (
   `is_hidden` tinyint(1) NOT NULL DEFAULT '0',
   `ordering` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`item_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
