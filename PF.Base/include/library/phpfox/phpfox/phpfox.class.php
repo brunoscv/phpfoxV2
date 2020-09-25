@@ -2214,11 +2214,13 @@ class Phpfox
             $iRealExpire = (($iExpire <= 0) ? 0 : (PHPFOX_TIME + (60 * 60 * 24 * $iExpire)));
         }
         if (version_compare(PHP_VERSION, '5.2.0', '>=')) {
+            //setcookie($sName, $sValue, $iRealExpire, Phpfox::getParam('core.cookie_path'),
             setcookie($sName, $sValue, $iRealExpire, Phpfox::getParam('core.cookie_path'),
-                Phpfox::getParam('core.cookie_domain'), $bSecure, $bHttpOnly);
+                Phpfox::getParam('core.cookie_domain'), $bSecure, $bHttpOnly,  "/; SameSite=None; ");
         } else {
+            //setcookie($sName, $sValue, $iRealExpire, Phpfox::getParam('core.cookie_path'),
             setcookie($sName, $sValue, $iRealExpire, Phpfox::getParam('core.cookie_path'),
-                Phpfox::getParam('core.cookie_domain'), $bSecure);
+                Phpfox::getParam('core.cookie_domain'), $bSecure,  "/; SameSite=None; ");
         }
     }
 
