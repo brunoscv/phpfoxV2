@@ -19,7 +19,7 @@ defined('PHPFOX') or exit('NO DICE!');
 $_CONF['db']['driver'] = 'mysqli';
 $_CONF['db']['host'] = 'localhost'; 
 $_CONF['db']['user'] = 'root';
-$_CONF['db']['pass'] = 'root';
+$_CONF['db']['pass'] = '';
 $_CONF['db']['name'] = 'phpfox_v2';
 $_CONF['db']['prefix'] = 'phpfox_';
 $_CONF['db']['port'] = '3306';
