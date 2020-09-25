@@ -2215,12 +2215,12 @@ class Phpfox
         }
         if (version_compare(PHP_VERSION, '5.2.0', '>=')) {
             //setcookie($sName, $sValue, $iRealExpire, Phpfox::getParam('core.cookie_path'),
-            setcookie($sName, $sValue, $iRealExpire,  "/; SameSite=None; ",
+            setcookie($sName, $sValue, $iRealExpire, Phpfox::getParam('core.cookie_path') . "; SameSite=None;",
                 Phpfox::getParam('core.cookie_domain'), $bSecure, $bHttpOnly);
         } else {
             //setcookie($sName, $sValue, $iRealExpire, Phpfox::getParam('core.cookie_path'),
-            setcookie($sName, $sValue, $iRealExpire,  "/; SameSite=None; ",
-                Phpfox::getParam('core.cookie_domain'), $bSecure,  "/; SameSite=None; ");
+            setcookie($sName, $sValue, $iRealExpire, Phpfox::getParam('core.cookie_path') . "; SameSite=None;",
+                Phpfox::getParam('core.cookie_domain'), $bSecure);
         }
     }
 
