@@ -44709,9 +44709,8 @@ html[dir='rtl'] .navbar-collapse .site_menu .login-menu-btns-xs .div02 .btn .ico
   }
   .navbar.main-navigation .site-menu > li > a {
     color: #bbd8f3;
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 700;
-    text-transform: uppercase;
     min-height: 40px;
     height: 40px;
     display: flex;
