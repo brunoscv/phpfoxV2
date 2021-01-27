@@ -84,7 +84,7 @@
 					{menu_footer}
 				</nav>
 				<div id="copyright">
-					
+					{copyright}
 				</div>
 				{block location='5'}
 			</footer>
